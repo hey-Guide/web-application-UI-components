@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+> **heyGuide copy:** Apart from this note, this file is HeroUI's upstream guide. This repository has no `apps/docs`, so ignore the parts about the documentation site and its `pnpm *:docs` scripts. See [README.md](./README.md) for what was copied and how to update from upstream.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Repository Overview

@@ -2,11 +2,9 @@ name: QA
 
 on:
   pull_request:
+  push:
     branches:
-      - canary
-      - v3*
-      - "beta-*"
-      - "rc-*"
+      - main
 
 concurrency:
   group: qa-${{ github.workflow }}-${{ github.ref }}
@@ -68,28 +66,3 @@ jobs:
           name: react-coverage
           path: packages/react/coverage
           if-no-files-found: ignore
-
-  continuous-release:
-    name: Continuous Release
-    if: github.repository == 'heroui-inc/heroui'
-    needs: [build]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Install
-        uses: ./.github/common-actions/install
-
-      # Turbo cache from the Build job should make this a near no-op when the
-      # inputs haven't changed; we still need dist/ in this job's workspace.
-      - name: Build packages
-        run: pnpm build
-
-      - name: Release
-        run: pnpx pkg-pr-new publish --pnpm './packages/styles' './packages/react'
