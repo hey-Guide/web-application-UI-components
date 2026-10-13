@@ -94,3 +94,6 @@ apps/docs/public/skills
 
 # SEO analysis output
 .seo-output
+
+# local package tarballs (pnpm pack --pack-destination ./packs)
+packs
