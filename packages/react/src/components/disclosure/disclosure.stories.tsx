@@ -1,6 +1,6 @@
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {ChevronDown, ChevronUp, Download, Package, QrCode} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -41,7 +41,7 @@ const Template = (props: Disclosure["RootProps"]) => {
       <Disclosure {...props} isExpanded={isExpanded} onExpandedChange={setIsExpanded}>
         <Disclosure.Heading>
           <Button slot="trigger" variant="secondary">
-            <Icon icon="gravity-ui:qr-code" />
+            <QrCode />
             Preview HeroUI Native
             <Disclosure.Indicator />
           </Button>
@@ -58,7 +58,7 @@ const Template = (props: Disclosure["RootProps"]) => {
             />
             <p className="text-sm text-muted">Expo must be installed on your device.</p>
             <Button className="mt-4" variant="primary">
-              <Icon icon="tabler:brand-apple-filled" />
+              <Download />
               Download on App Store
             </Button>
           </Disclosure.Body>
@@ -84,10 +84,7 @@ const ControlledTemplate = (props: Disclosure["RootProps"]) => {
       <Disclosure {...props} isExpanded={isExpanded} onExpandedChange={setIsExpanded}>
         <Disclosure.Trigger className="mb-2 flex w-full items-center justify-between rounded-md border border-gray-300 px-4 py-2 text-start hover:bg-gray-50">
           <span>Toggle content</span>
-          <Icon
-            className="size-4 transition-transform duration-200 data-[state=open]:rotate-180"
-            icon="gravity-ui:chevron-down"
-          />
+          <ChevronDown className="size-4 transition-transform duration-200 data-[state=open]:rotate-180" />
         </Disclosure.Trigger>
         <Disclosure.Content>
           <Disclosure.Body className="rounded-lg border p-4">
@@ -110,13 +107,14 @@ const ProductDetailsTemplate = (props: Disclosure["RootProps"]) => {
       <Disclosure {...props} isExpanded={isExpanded} onExpandedChange={setIsExpanded}>
         <Disclosure.Trigger className="flex w-full items-center justify-between rounded-md border border-gray-300 px-4 py-2 text-start hover:bg-gray-50">
           <span className="flex items-center gap-2">
-            <Icon icon="gravity-ui:box" />
+            <Package />
             View product details
           </span>
-          <Icon
-            className="size-4 transition-transform duration-200"
-            icon={isExpanded ? "gravity-ui:chevron-up" : "gravity-ui:chevron-down"}
-          />
+          {isExpanded ? (
+            <ChevronUp className="size-4 transition-transform duration-200" />
+          ) : (
+            <ChevronDown className="size-4 transition-transform duration-200" />
+          )}
         </Disclosure.Trigger>
         <Disclosure.Content>
           <Disclosure.Body className="pt-2">

@@ -1,6 +1,26 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Ellipsis,
+  GitFork,
+  Globe,
+  Image,
+  Pin,
+  Plus,
+  QrCode,
+  Star,
+  TextAlignCenter,
+  TextAlignEnd,
+  TextAlignJustify,
+  TextAlignStart,
+  ThumbsDown,
+  ThumbsUp,
+  Trash2,
+  Video,
+} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -105,15 +125,15 @@ export const FullWidth: Story = {
       </ButtonGroup>
       <ButtonGroup fullWidth>
         <Button isIconOnly>
-          <Icon icon="gravity-ui:text-align-left" />
+          <TextAlignStart />
         </Button>
         <Button isIconOnly>
           <ButtonGroup.Separator />
-          <Icon icon="gravity-ui:text-align-center" />
+          <TextAlignCenter />
         </Button>
         <Button isIconOnly>
           <ButtonGroup.Separator />
-          <Icon icon="gravity-ui:text-align-right" />
+          <TextAlignEnd />
         </Button>
       </ButtonGroup>
     </div>
@@ -253,17 +273,17 @@ export const WithIcons: Story = {
         <p className="text-sm text-muted">With icons</p>
         <ButtonGroup variant="secondary">
           <Button>
-            <Icon icon="gravity-ui:globe" />
+            <Globe />
             Search
           </Button>
           <Button>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:plus" />
+            <Plus />
             Add
           </Button>
           <Button>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:trash-bin" />
+            <Trash2 />
             Delete
           </Button>
         </ButtonGroup>
@@ -272,15 +292,15 @@ export const WithIcons: Story = {
         <p className="text-sm text-muted">Icon only buttons</p>
         <ButtonGroup variant="tertiary">
           <Button isIconOnly>
-            <Icon icon="gravity-ui:globe" />
+            <Globe />
           </Button>
           <Button isIconOnly>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:plus" />
+            <Plus />
           </Button>
           <Button isIconOnly>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:trash-bin" />
+            <Trash2 />
           </Button>
         </ButtonGroup>
       </div>
@@ -309,7 +329,7 @@ export const Examples: Story = {
           <Dropdown>
             <Button isIconOnly aria-label="More options">
               <ButtonGroup.Separator />
-              <Icon icon="gravity-ui:chevron-down" />
+              <ChevronDown />
             </Button>
             <Dropdown.Popover className="max-w-[290px]" placement="bottom end">
               <Dropdown.Menu onAction={(key) => alert(`Selected: ${key}`)}>
@@ -356,7 +376,7 @@ export const Examples: Story = {
         <div className="flex gap-2">
           <ButtonGroup variant="tertiary">
             <Button>
-              <Icon className="size-3.5" icon="gravity-ui:code-fork" />
+              <GitFork className="size-3.5" />
               Fork
               <Chip color="accent" size="sm" variant="soft">
                 24
@@ -364,12 +384,12 @@ export const Examples: Story = {
             </Button>
             <Button isIconOnly>
               <ButtonGroup.Separator />
-              <Icon icon="gravity-ui:chevron-down" />
+              <ChevronDown />
             </Button>
           </ButtonGroup>
           <ButtonGroup variant="tertiary">
             <Button isIconOnly>
-              <Icon icon="gravity-ui:qr-code" />
+              <QrCode />
             </Button>
             <Button>
               <ButtonGroup.Separator />
@@ -378,17 +398,17 @@ export const Examples: Story = {
           </ButtonGroup>
           <ButtonGroup variant="tertiary">
             <Button>
-              <Icon icon="gravity-ui:thumbs-up" />
+              <ThumbsUp />
               <span className="text-xs font-semibold">2.4K</span>
             </Button>
             <Button isIconOnly>
               <ButtonGroup.Separator />
-              <Icon icon="gravity-ui:thumbs-down" />
+              <ThumbsDown />
             </Button>
           </ButtonGroup>
           <ButtonGroup variant="tertiary">
             <Button>
-              <Icon className="size-3.5" icon="gravity-ui:star" />
+              <Star className="size-3.5" />
               Star
             </Button>
             <Button className="px-2">
@@ -400,12 +420,12 @@ export const Examples: Story = {
           </ButtonGroup>
           <ButtonGroup variant="tertiary">
             <Button>
-              <Icon icon="gravity-ui:pin" />
+              <Pin />
               Pinned
             </Button>
             <Button isIconOnly>
               <ButtonGroup.Separator />
-              <Icon icon="gravity-ui:chevron-down" />
+              <ChevronDown />
             </Button>
           </ButtonGroup>
         </div>
@@ -416,13 +436,13 @@ export const Examples: Story = {
         <p className="text-sm text-muted">Previous/Next navigation</p>
         <ButtonGroup variant="tertiary">
           <Button>
-            <Icon icon="gravity-ui:chevron-left" />
+            <ChevronLeft />
             Previous
           </Button>
           <Button>
             <ButtonGroup.Separator />
             Next
-            <Icon icon="gravity-ui:chevron-right" />
+            <ChevronRight />
           </Button>
         </ButtonGroup>
       </div>
@@ -432,17 +452,17 @@ export const Examples: Story = {
         <p className="text-sm text-muted">Content selection</p>
         <ButtonGroup variant="tertiary">
           <Button>
-            <Icon icon="gravity-ui:picture" />
+            <Image />
             Photos
           </Button>
           <Button>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:video" />
+            <Video />
             Videos
           </Button>
           <Button isIconOnly aria-label="More options">
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:ellipsis" />
+            <Ellipsis />
           </Button>
         </ButtonGroup>
       </div>
@@ -468,19 +488,19 @@ export const Examples: Story = {
         <p className="text-sm text-muted">Icon-only alignment</p>
         <ButtonGroup variant="tertiary">
           <Button isIconOnly>
-            <Icon icon="gravity-ui:text-align-left" />
+            <TextAlignStart />
           </Button>
           <Button isIconOnly>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:text-align-center" />
+            <TextAlignCenter />
           </Button>
           <Button isIconOnly>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:text-align-right" />
+            <TextAlignEnd />
           </Button>
           <Button isIconOnly>
             <ButtonGroup.Separator />
-            <Icon icon="gravity-ui:text-align-justify" />
+            <TextAlignJustify />
           </Button>
         </ButtonGroup>
       </div>

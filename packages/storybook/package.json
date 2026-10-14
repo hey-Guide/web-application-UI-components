@@ -11,15 +11,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@gravity-ui/icons": "2.22.0",
     "@heroui/react": "workspace:*",
     "@heroui/styles": "workspace:*",
-    "@iconify/react": "6.0.2",
     "apcach": "0.6.4",
     "culori": "4.0.2",
     "react": "19.3.0",
-    "react-dom": "19.3.0",
     "react-aria-components": "1.21.1",
+    "react-dom": "19.3.0",
     "react-scan": "0.5.7",
     "tailwind-variants": "3.3.1"
   },
@@ -36,6 +34,7 @@
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "5.2.0",
     "glob": "13.0.6",
+    "lucide-react": "1.49.0",
     "postcss": "8.5.28",
     "storybook": "10.6.0",
     "tailwindcss": "4.3.3",

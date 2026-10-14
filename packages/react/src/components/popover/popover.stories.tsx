@@ -1,6 +1,6 @@
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Info} from "lucide-react";
 import React from "react";
 
 import {Avatar} from "../avatar";
@@ -55,7 +55,7 @@ const Template = (props: Popover["ContentProps"]) => (
   <div className="flex items-center gap-3">
     <Popover>
       <Button isIconOnly aria-label="Popover trigger" variant="tertiary">
-        <Icon icon="gravity-ui:circle-info" />
+        <Info />
       </Button>
       <Popover.Content {...props}>
         <Popover.Dialog>
@@ -71,7 +71,7 @@ const TemplateWithArrow = (props: Popover["ContentProps"]) => (
   <div className="flex items-center gap-3">
     <Popover>
       <Button isIconOnly aria-label="Popover trigger" variant="tertiary">
-        <Icon icon="gravity-ui:circle-info" />
+        <Info />
       </Button>
       <Popover.Content {...props}>
         <Popover.Dialog>
@@ -220,7 +220,7 @@ const CardWithHelptextTemplate = (props: Popover["ContentProps"]) => (
         <Popover>
           <Popover.Trigger aria-label="Help information">
             <Button isIconOnly aria-label="Help" size="sm" variant="ghost">
-              <Icon className="text-muted" icon="gravity-ui:circle-info" />
+              <Info className="text-muted" />
             </Button>
           </Popover.Trigger>
           <Popover.Content {...props} className="max-w-[200px]" placement="right">

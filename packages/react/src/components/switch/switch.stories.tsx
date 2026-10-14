@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Bell, BellOff, Check, Mic, MicOff, Moon, Power, Sun, Volume2, VolumeX} from "lucide-react";
 import React from "react";
 
 import {Description} from "../description";
@@ -206,10 +206,11 @@ export const WithCustomStyles: Story = {
               className={`size-[27px] bg-white shadow-sm ${isSelected ? "ms-[22px] shadow-lg" : ""}`}
             >
               <Switch.Icon>
-                <Icon
-                  className={`size-4 ${isSelected ? "text-cyan-600" : "text-blue-600"}`}
-                  icon={isSelected ? "gravity-ui:check" : "gravity-ui:power"}
-                />
+                {isSelected ? (
+                  <Check className={`size-4 ${isSelected ? "text-cyan-600" : "text-blue-600"}`} />
+                ) : (
+                  <Power className={`size-4 ${isSelected ? "text-cyan-600" : "text-blue-600"}`} />
+                )}
               </Switch.Icon>
             </Switch.Thumb>
           </Switch.Control>
@@ -222,33 +223,33 @@ export const WithCustomStyles: Story = {
 export const WithIcons: Story = {
   render: () => {
     const icons = {
-      lock: {
-        off: "gravity-ui:volume-fill",
-        on: "gravity-ui:volume-slash-fill",
-        selectedControlClass: "bg-blue-500",
-        selectedIconClass: "text-blue-600",
-      },
-      microphone: {
-        off: "gravity-ui:microphone",
-        on: "gravity-ui:microphone-slash",
-        selectedControlClass: "bg-red-500",
-        selectedIconClass: "text-red-600",
-      },
       check: {
-        off: "gravity-ui:power",
-        on: "gravity-ui:check",
+        off: Power,
+        on: Check,
         selectedControlClass: "bg-green-500",
         selectedIconClass: "text-green-600",
       },
       darkMode: {
-        off: "gravity-ui:moon",
-        on: "gravity-ui:sun",
+        off: Moon,
+        on: Sun,
         selectedControlClass: "",
         selectedIconClass: "",
       },
+      lock: {
+        off: Volume2,
+        on: VolumeX,
+        selectedControlClass: "bg-blue-500",
+        selectedIconClass: "text-blue-600",
+      },
+      microphone: {
+        off: Mic,
+        on: MicOff,
+        selectedControlClass: "bg-red-500",
+        selectedIconClass: "text-red-600",
+      },
       notification: {
-        off: "gravity-ui:bell-slash",
-        on: "gravity-ui:bell-fill",
+        off: BellOff,
+        on: Bell,
         selectedControlClass: "bg-purple-500",
         selectedIconClass: "text-purple-600",
       },
@@ -263,10 +264,13 @@ export const WithIcons: Story = {
                 <Switch.Control className={isSelected ? value.selectedControlClass : ""}>
                   <Switch.Thumb>
                     <Switch.Icon>
-                      <Icon
-                        className={`${isSelected ? `opacity-100 ${value.selectedIconClass}` : "opacity-70"} size-3 text-inherit`}
-                        icon={isSelected ? value.on : value.off}
-                      />
+                      {isSelected ? (
+                        <value.on
+                          className={`opacity-100 ${value.selectedIconClass} size-3 text-inherit`}
+                        />
+                      ) : (
+                        <value.off className="size-3 text-inherit opacity-70" />
+                      )}
                     </Switch.Icon>
                   </Switch.Thumb>
                 </Switch.Control>

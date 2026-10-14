@@ -166,10 +166,11 @@ const ColorSwatchPickerIndicator = <E extends keyof React.JSX.IntrinsicElements 
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={1.5}
-        viewBox="0 0 12 12"
+        strokeWidth={3}
+        viewBox="0 0 24 24"
       >
-        <polyline points="2.5 6 5 8.5 9.5 3" />
+        {/* Lucide `check` */}
+        <path d="M20 6 9 17l-5-5" />
       </svg>
     );
 

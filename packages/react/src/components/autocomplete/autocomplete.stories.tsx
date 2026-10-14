@@ -1,8 +1,8 @@
 import type {Key} from "@heroui/react";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
 import {useAsyncList} from "@react-stately/data";
+import {ChevronsUpDown} from "lucide-react";
 import React, {useState} from "react";
 import {useFilter} from "react-aria-components/Autocomplete";
 import {ListLayout, Virtualizer} from "react-aria-components/Virtualizer";
@@ -845,7 +845,7 @@ export const CustomIndicator: Story = {
           <Autocomplete.Value />
           <Autocomplete.ClearButton />
           <Autocomplete.Indicator className="size-3">
-            <Icon icon="gravity-ui:chevrons-expand-vertical" />
+            <ChevronsUpDown />
           </Autocomplete.Indicator>
         </Autocomplete.Trigger>
         <Autocomplete.Popover>
@@ -1417,39 +1417,39 @@ export const UserSelection: Story = {
   render: () => {
     const users = [
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
+        email: "bob@heroui.com",
+        fallback: "B",
         id: "1",
         name: "Bob",
-        email: "bob@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
-        fallback: "B",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
+        email: "fred@heroui.com",
+        fallback: "F",
         id: "2",
         name: "Fred",
-        email: "fred@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
-        fallback: "F",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
+        email: "martha@heroui.com",
+        fallback: "M",
         id: "3",
         name: "Martha",
-        email: "martha@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
-        fallback: "M",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
+        email: "john@heroui.com",
+        fallback: "J",
         id: "4",
         name: "John",
-        email: "john@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
-        fallback: "J",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
+        email: "jane@heroui.com",
+        fallback: "J",
         id: "5",
         name: "Jane",
-        email: "jane@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
-        fallback: "J",
       },
     ];
 
@@ -1533,39 +1533,39 @@ export const UserSelectionMultiple: Story = {
   render: () => {
     const users = [
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
+        email: "bob@heroui.com",
+        fallback: "B",
         id: "1",
         name: "Bob",
-        email: "bob@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
-        fallback: "B",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
+        email: "fred@heroui.com",
+        fallback: "F",
         id: "2",
         name: "Fred",
-        email: "fred@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
-        fallback: "F",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
+        email: "martha@heroui.com",
+        fallback: "M",
         id: "3",
         name: "Martha",
-        email: "martha@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
-        fallback: "M",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
+        email: "john@heroui.com",
+        fallback: "J",
         id: "4",
         name: "John",
-        email: "john@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
-        fallback: "J",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
+        email: "jane@heroui.com",
+        fallback: "J",
         id: "5",
         name: "Jane",
-        email: "jane@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
-        fallback: "J",
       },
     ];
 
@@ -1662,16 +1662,16 @@ interface City {
 export const LocationSearch: Story = {
   render: () => {
     const allCities: City[] = [
-      {name: "New York", country: "USA"},
-      {name: "Los Angeles", country: "USA"},
-      {name: "Chicago", country: "USA"},
-      {name: "London", country: "UK"},
-      {name: "Paris", country: "France"},
-      {name: "Tokyo", country: "Japan"},
-      {name: "Sydney", country: "Australia"},
-      {name: "Toronto", country: "Canada"},
-      {name: "Berlin", country: "Germany"},
-      {name: "Madrid", country: "Spain"},
+      {country: "USA", name: "New York"},
+      {country: "USA", name: "Los Angeles"},
+      {country: "USA", name: "Chicago"},
+      {country: "UK", name: "London"},
+      {country: "France", name: "Paris"},
+      {country: "Japan", name: "Tokyo"},
+      {country: "Australia", name: "Sydney"},
+      {country: "Canada", name: "Toronto"},
+      {country: "Germany", name: "Berlin"},
+      {country: "Spain", name: "Madrid"},
     ];
 
     const [selectedKey, setSelectedKey] = useState<Key | null>(null);
@@ -1819,11 +1819,11 @@ export const TagGroupSelection: Story = {
 export const EmailRecipients: Story = {
   render: () => {
     const emails = [
-      {id: "alice@example.com", name: "Alice Johnson", email: "alice@example.com"},
-      {id: "bob@example.com", name: "Bob Smith", email: "bob@example.com"},
-      {id: "charlie@example.com", name: "Charlie Brown", email: "charlie@example.com"},
-      {id: "diana@example.com", name: "Diana Prince", email: "diana@example.com"},
-      {id: "eve@example.com", name: "Eve Wilson", email: "eve@example.com"},
+      {email: "alice@example.com", id: "alice@example.com", name: "Alice Johnson"},
+      {email: "bob@example.com", id: "bob@example.com", name: "Bob Smith"},
+      {email: "charlie@example.com", id: "charlie@example.com", name: "Charlie Brown"},
+      {email: "diana@example.com", id: "diana@example.com", name: "Diana Prince"},
+      {email: "eve@example.com", id: "eve@example.com", name: "Eve Wilson"},
     ];
 
     const [selectedKeys, setSelectedKeys] = useState<Key[]>([]);

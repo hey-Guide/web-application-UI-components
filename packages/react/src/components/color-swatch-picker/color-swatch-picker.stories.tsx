@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Star} from "lucide-react";
 import React from "react";
 
 import {parseColor} from "../rac";
@@ -46,9 +46,9 @@ const Template = (props: ColorSwatchPicker["RootProps"]) => (
 
 export const Default: Story = {
   args: {
-    variant: "circle",
-    size: "md",
     layout: "grid",
+    size: "md",
+    variant: "circle",
   },
   render: Template,
 };
@@ -222,7 +222,7 @@ export const WithCustomIndicator: Story = {
         <ColorSwatchPicker.Item key={color} color={color}>
           <ColorSwatchPicker.Swatch />
           <ColorSwatchPicker.Indicator>
-            <Icon icon="gravity-ui:star-fill" />
+            <Star fill="currentColor" />
           </ColorSwatchPicker.Indicator>
         </ColorSwatchPicker.Item>
       ))}

@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {CreditCard, Wallet} from "lucide-react";
 import React from "react";
 import {cx} from "tailwind-variants";
 
@@ -423,41 +423,41 @@ export const DeliveryAndPaymentExample: Story = {
       {
         description: "4-10 business days",
         price: "$5.00",
-        value: "standard",
         title: "Standard",
+        value: "standard",
       },
       {
         description: "2-5 business days",
         price: "$16.00",
-        value: "express",
         title: "Express",
+        value: "express",
       },
       {
         description: "1 business day",
         price: "$25.00",
-        value: "super-fast",
         title: "Super Fast",
+        value: "super-fast",
       },
     ];
 
     const paymentOptions = [
       {
+        description: "Exp. on 01/2026",
+        icon: CreditCard,
         title: "**** 8304",
         value: "mastercard",
-        description: "Exp. on 01/2026",
-        icon: "uim:master-card",
       },
       {
+        description: "Exp. on 01/2026",
+        icon: CreditCard,
         title: "**** 0123",
         value: "visa",
-        description: "Exp. on 01/2026",
-        icon: "streamline-logos:visa-logo-solid",
       },
       {
-        title: "PayPal",
         description: "Pay with PayPal",
+        icon: Wallet,
+        title: "PayPal",
         value: "paypal",
-        icon: "ic:baseline-paypal",
       },
     ];
 
@@ -506,7 +506,7 @@ export const DeliveryAndPaymentExample: Story = {
                     <Radio.Control className="absolute end-4 top-3 size-5">
                       <Radio.Indicator />
                     </Radio.Control>
-                    <Icon className="size-6 text-accent" icon={option.icon} />
+                    <option.icon className="size-6 text-accent" />
                     <div className="flex flex-col gap-1">
                       <span>{option.title}</span>
                       <Description>{option.description}</Description>

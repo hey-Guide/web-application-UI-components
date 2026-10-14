@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {CircleDollarSign} from "lucide-react";
 import React from "react";
 
 import {Avatar} from "../avatar";
@@ -34,10 +34,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <Card className="w-[400px]" {...args}>
-      <Icon
+      <CircleDollarSign
         aria-label="Dollar sign icon"
         className="text-primary size-6"
-        icon="gravity-ui:circle-dollar"
+
         role="img"
       />
       <Card.Header>
@@ -242,10 +242,10 @@ export const WithImages: Story = {
                 <CloseButton aria-label="Close notification" />
               </div>
               <Card.Header className="gap-3">
-                <Icon
+                <CircleDollarSign
                   aria-label="Dollar sign icon"
                   className="text-primary size-8 shrink-0"
-                  icon="gravity-ui:circle-dollar"
+
                   role="img"
                 />
                 <div className="flex flex-col gap-1">

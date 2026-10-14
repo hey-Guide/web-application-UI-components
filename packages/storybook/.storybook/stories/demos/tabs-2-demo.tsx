@@ -1,5 +1,5 @@
-import {Comment, Envelope} from "@gravity-ui/icons";
 import {Tabs} from "@heroui/react";
+import {Mail, MessageCircle} from "lucide-react";
 import React from "react";
 
 export function TabsDemo2() {
@@ -8,12 +8,12 @@ export function TabsDemo2() {
       <Tabs.ListContainer>
         <Tabs.List aria-label="Options">
           <Tabs.Tab className="gap-1.5" id="chats">
-            <Comment />
+            <MessageCircle />
             <span>Chats</span>
             <Tabs.Indicator />
           </Tabs.Tab>
           <Tabs.Tab className="gap-1.5" id="emails">
-            <Envelope />
+            <Mail />
             <span>Emails</span>
             <Tabs.Indicator />
           </Tabs.Tab>

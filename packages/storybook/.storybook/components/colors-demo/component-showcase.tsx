@@ -26,7 +26,7 @@ import {
   Switch,
   Tabs,
 } from "@heroui/react";
-import {Icon} from "@iconify/react";
+import {CircleDollarSign, Info, Mail, Rocket, Sparkles, TriangleAlert} from "lucide-react";
 import React from "react";
 
 import {HeroUILogo} from "../heroui-logo";
@@ -192,10 +192,10 @@ export function ComponentShowcase() {
                       <CloseButton aria-label="Close notification" />
                     </div>
                     <Card.Header className="gap-3">
-                      <Icon
+                      <CircleDollarSign
                         aria-label="Dollar sign icon"
                         className="text-primary size-8 shrink-0"
-                        icon="gravity-ui:circle-dollar"
+
                         role="img"
                       />
                       <div className="flex flex-col gap-1">
@@ -597,7 +597,7 @@ export function ComponentShowcase() {
                     <Modal.CloseTrigger />
                     <Modal.Header>
                       <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                        <Icon className="size-5" icon="gravity-ui:rocket" />
+                        <Rocket className="size-5" />
                       </Modal.Icon>
                       <Modal.Heading>Welcome to HeroUI</Modal.Heading>
                     </Modal.Header>
@@ -620,7 +620,7 @@ export function ComponentShowcase() {
             {/* Popover */}
             <Popover>
               <Button isIconOnly aria-label="Info" size="sm" variant="tertiary">
-                <Icon icon="gravity-ui:circle-info" />
+                <Info />
               </Button>
               <Popover.Content>
                 <Popover.Dialog>
@@ -785,7 +785,7 @@ export function ComponentShowcase() {
                     <Modal.CloseTrigger />
                     <Modal.Header>
                       <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                        <Icon className="size-5" icon="gravity-ui:envelope" />
+                        <Mail className="size-5" />
                       </Modal.Icon>
                       <Modal.Heading>Contact Us</Modal.Heading>
                       <p className="text-sm text-muted">
@@ -835,7 +835,7 @@ export function ComponentShowcase() {
                   <Modal.Dialog className="sm:max-w-[360px]">
                     <Modal.Header className="items-center text-center">
                       <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                        <Icon className="size-5" icon="gravity-ui:sparkles" />
+                        <Sparkles className="size-5" />
                       </Modal.Icon>
                       <Modal.Heading>Premium Feature</Modal.Heading>
                     </Modal.Header>
@@ -873,7 +873,7 @@ export function ComponentShowcase() {
                     <AlertDialog.CloseTrigger />
                     <AlertDialog.Header className="items-center text-center">
                       <AlertDialog.Icon status="danger">
-                        <Icon className="size-5" icon="gravity-ui:triangle-exclamation" />
+                        <TriangleAlert className="size-5" />
                       </AlertDialog.Icon>
                       <AlertDialog.Heading>Delete your account?</AlertDialog.Heading>
                     </AlertDialog.Header>

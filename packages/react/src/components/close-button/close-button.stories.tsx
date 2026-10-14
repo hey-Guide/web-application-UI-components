@@ -1,7 +1,7 @@
 import type {CloseButtonProps} from "./index";
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {CircleX} from "lucide-react";
 import React, {useState} from "react";
 
 import {CloseButton} from "./index";
@@ -24,8 +24,8 @@ export default {
 } as Meta<typeof CloseButton>;
 
 const defaultArgs: CloseButtonProps = {
-  variant: "default",
   isDisabled: false,
+  variant: "default",
 };
 
 const Template = (args: CloseButtonProps) => (
@@ -37,7 +37,7 @@ const Template = (args: CloseButtonProps) => (
 const TemplateWithCustomIcon = (args: CloseButtonProps) => (
   <div className="flex gap-3">
     <CloseButton {...args}>
-      <Icon icon="gravity-ui:circle-xmark" />
+      <CircleX />
     </CloseButton>
   </div>
 );

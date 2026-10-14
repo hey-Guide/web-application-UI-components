@@ -1,6 +1,6 @@
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Ellipsis, Globe, LogIn, Mail, Paperclip, Plus, Trash2} from "lucide-react";
 import React, {useState} from "react";
 
 import {Spinner} from "../spinner";
@@ -62,7 +62,7 @@ const TemplateWithLinkButton = ({isIconOnly, size, variant}: Button["RootProps"]
   <div className="flex flex-col gap-3">
     <div className="flex gap-3">
       <a
-        className={buttonVariants({size, variant, isIconOnly})}
+        className={buttonVariants({isIconOnly, size, variant})}
         href="https://www.google.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -76,23 +76,23 @@ const TemplateWithLinkButton = ({isIconOnly, size, variant}: Button["RootProps"]
 const TemplateWithIcon = ({isDisabled, size}: Button["RootProps"]) => (
   <div className="flex gap-3">
     <Button isDisabled={isDisabled} size={size}>
-      <Icon icon="gravity-ui:globe" />
+      <Globe />
       Search
     </Button>
     <Button isDisabled={isDisabled} size={size} variant="secondary">
-      <Icon icon="gravity-ui:plus" />
+      <Plus />
       Add Member
     </Button>
     <Button isDisabled={isDisabled} size={size} variant="tertiary">
-      <Icon icon="gravity-ui:envelope" />
+      <Mail />
       Email
     </Button>
     <Button isDisabled={isDisabled} size={size} variant="danger">
-      <Icon icon="gravity-ui:trash-bin" />
+      <Trash2 />
       Delete
     </Button>
     <Button isDisabled={isDisabled} size={size} variant="danger-soft">
-      <Icon icon="gravity-ui:trash-bin" />
+      <Trash2 />
       Cancel
     </Button>
   </div>
@@ -101,7 +101,7 @@ const TemplateWithIcon = ({isDisabled, size}: Button["RootProps"]) => (
 const TemplateWithIconOnly = ({isDisabled, size, variant}: Button["RootProps"]) => (
   <div className="flex gap-3">
     <Button isIconOnly isDisabled={isDisabled} size={size} variant={variant ?? "tertiary"}>
-      <Icon icon="gravity-ui:ellipsis" />
+      <Ellipsis />
     </Button>
   </div>
 );
@@ -129,7 +129,7 @@ const TemplateWithLoadingState = ({size, variant}: Button["RootProps"]) => {
     <Button isPending={isLoading} size={size} variant={variant ?? "tertiary"} onPress={handlePress}>
       {({isPending}) => (
         <>
-          {isPending ? <Spinner color="current" size="sm" /> : <Icon icon="gravity-ui:paperclip" />}
+          {isPending ? <Spinner color="current" size="sm" /> : <Paperclip />}
           {isLoading ? "Uploading..." : "Upload File"}
         </>
       )}
@@ -146,27 +146,27 @@ const SizesTemplate = () => (
     </div>
     <div className="flex items-center gap-3">
       <Button size="sm" variant="secondary">
-        <Icon icon="gravity-ui:plus" />
+        <Plus />
         Small
       </Button>
       <Button size="md" variant="secondary">
-        <Icon icon="gravity-ui:plus" />
+        <Plus />
         Medium
       </Button>
       <Button size="lg" variant="secondary">
-        <Icon icon="gravity-ui:plus" />
+        <Plus />
         Large
       </Button>
     </div>
     <div className="flex items-center gap-3">
       <Button isIconOnly size="sm" variant="tertiary">
-        <Icon icon="gravity-ui:ellipsis" />
+        <Ellipsis />
       </Button>
       <Button isIconOnly size="md" variant="tertiary">
-        <Icon icon="gravity-ui:ellipsis" />
+        <Ellipsis />
       </Button>
       <Button isIconOnly size="lg" variant="tertiary">
-        <Icon icon="gravity-ui:ellipsis" />
+        <Ellipsis />
       </Button>
     </div>
   </div>
@@ -175,19 +175,19 @@ const SizesTemplate = () => (
 const TemplateWithSocialButton = ({size, variant}: Button["RootProps"]) => (
   <div className="flex w-full max-w-xs flex-col gap-3">
     <Button size={size} variant={variant ?? "tertiary"}>
-      <Icon icon="devicon:google" />
+      <LogIn />
       Sign in with Google
     </Button>
     <Button size={size} variant={variant ?? "tertiary"}>
-      <Icon icon="mdi:github" />
+      <LogIn />
       Sign in with GitHub
     </Button>
     <Button size={size} variant={variant ?? "tertiary"}>
-      <Icon icon="ion:logo-apple" />
+      <LogIn />
       Sign in with Apple
     </Button>
     <Button size={size} variant={variant ?? "tertiary"}>
-      <Icon icon="typcn:social-linkedin" />
+      <LogIn />
       Sign in with LinkedIn
     </Button>
   </div>
@@ -224,7 +224,7 @@ export const FullWidth = {
         Large
       </Button>
       <Button fullWidth>
-        <Icon icon="gravity-ui:plus" />
+        <Plus />
         With Icon
       </Button>
     </div>

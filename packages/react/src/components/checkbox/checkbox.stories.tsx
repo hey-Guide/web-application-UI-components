@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Bell, Mail, MessageCircle} from "lucide-react";
 import React from "react";
 import {cx} from "tailwind-variants";
 
@@ -325,22 +325,22 @@ export const FeaturesAndAddOnsExample: Story = {
   render: () => {
     const addOns = [
       {
+        description: "Receive updates via email",
+        icon: Mail,
         title: "Email Notifications",
         value: "email",
-        description: "Receive updates via email",
-        icon: "gravity-ui:envelope",
       },
       {
+        description: "Get instant SMS notifications",
+        icon: MessageCircle,
         title: "SMS Alerts",
         value: "sms",
-        description: "Get instant SMS notifications",
-        icon: "gravity-ui:comment",
       },
       {
+        description: "Browser and mobile push alerts",
+        icon: Bell,
         title: "Push Notifications",
         value: "push",
-        description: "Browser and mobile push alerts",
-        icon: "gravity-ui:bell",
       },
     ];
 
@@ -362,7 +362,7 @@ export const FeaturesAndAddOnsExample: Story = {
                     <Checkbox.Control className="absolute end-4 top-3 size-5 rounded-full before:rounded-full">
                       <Checkbox.Indicator />
                     </Checkbox.Control>
-                    <Icon className="size-5 text-accent" icon={addon.icon} />
+                    <addon.icon className="size-5 text-accent" />
                     <div className="flex flex-col gap-1">
                       <span>{addon.title}</span>
                       <Description>{addon.description}</Description>

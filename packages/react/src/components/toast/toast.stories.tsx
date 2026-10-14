@@ -2,7 +2,7 @@ import type {ToastContentValue, ToastVariants} from "./index";
 import type {HeroUIToastOptions} from "./toast-queue";
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Bell, HardDrive, Star, Users} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -64,7 +64,7 @@ const Template = () => {
                 variant: "tertiary",
               },
               description: "Bob sent you an invitation to join HeroUI team",
-              indicator: <Icon icon="gravity-ui:persons" />,
+              indicator: <Users />,
               variant: "default",
             });
           }}
@@ -125,7 +125,7 @@ const Template = () => {
               actionProps: {children: "Remove", onPress: () => toast.close(id), variant: "danger"},
               description:
                 "Remove files to release space. Adding more text to demonstrate longer content display",
-              indicator: <Icon icon="gravity-ui:hard-drive" />,
+              indicator: <HardDrive />,
             });
           }}
         >
@@ -284,7 +284,7 @@ const PromiseToastTemplate = () => {
 
   const fetchUser = (): Promise<{name: string; email: string}> => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve({name: "John Doe", email: "john@example.com"}), 2000);
+      setTimeout(() => resolve({email: "john@example.com", name: "John Doe"}), 2000);
     });
   };
 
@@ -363,7 +363,7 @@ const CustomIndicatorTemplate = () => {
         variant="secondary"
         onPress={() =>
           toast("Custom icon indicator", {
-            indicator: <Icon icon="gravity-ui:star" />,
+            indicator: <Star />,
           })
         }
       >
@@ -724,7 +724,7 @@ const ToastInModalTemplate = () => {
               <Modal.CloseTrigger />
               <Modal.Header>
                 <Modal.Icon className="bg-default text-foreground">
-                  <Icon className="size-5" icon="gravity-ui:bell" />
+                  <Bell className="size-5" />
                 </Modal.Icon>
                 <Modal.Heading>Notifications</Modal.Heading>
               </Modal.Header>

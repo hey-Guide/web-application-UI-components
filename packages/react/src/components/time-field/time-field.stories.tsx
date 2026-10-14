@@ -1,8 +1,8 @@
 import type {TimeValue} from "../rac";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
 import {Time, getLocalTimeZone, now, parseTime} from "@internationalized/date";
+import {ChevronDown, Clock} from "lucide-react";
 import React, {useState} from "react";
 
 import {Button} from "../button";
@@ -49,11 +49,11 @@ export const FullWidth: Story = {
         <Label>Time</Label>
         <TimeField.Group fullWidth>
           <TimeField.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+            <Clock className="size-4 text-muted" />
           </TimeField.Prefix>
           <TimeField.Input>{(segment) => <TimeField.Segment segment={segment} />}</TimeField.Input>
           <TimeField.Suffix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:chevron-down" />
+            <ChevronDown className="size-4 text-muted" />
           </TimeField.Suffix>
         </TimeField.Group>
       </TimeField>
@@ -230,7 +230,7 @@ export const WithPrefixIcon: Story = {
       <Label>Time</Label>
       <TimeField.Group>
         <TimeField.Prefix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+          <Clock className="size-4 text-muted" />
         </TimeField.Prefix>
         <TimeField.Input>{(segment) => <TimeField.Segment segment={segment} />}</TimeField.Input>
       </TimeField.Group>
@@ -245,7 +245,7 @@ export const WithSuffixIcon: Story = {
       <TimeField.Group>
         <TimeField.Input>{(segment) => <TimeField.Segment segment={segment} />}</TimeField.Input>
         <TimeField.Suffix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+          <Clock className="size-4 text-muted" />
         </TimeField.Suffix>
       </TimeField.Group>
     </TimeField>
@@ -258,11 +258,11 @@ export const WithPrefixAndSuffix: Story = {
       <Label>Time</Label>
       <TimeField.Group>
         <TimeField.Prefix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+          <Clock className="size-4 text-muted" />
         </TimeField.Prefix>
         <TimeField.Input>{(segment) => <TimeField.Segment segment={segment} />}</TimeField.Input>
         <TimeField.Suffix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:chevron-down" />
+          <ChevronDown className="size-4 text-muted" />
         </TimeField.Suffix>
       </TimeField.Group>
       <Description>Enter a time</Description>
@@ -311,7 +311,7 @@ export const FormExample: Story = {
           <Label>Appointment time</Label>
           <TimeField.Group>
             <TimeField.Prefix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+              <Clock className="size-4 text-muted" />
             </TimeField.Prefix>
             <TimeField.Input>
               {(segment) => <TimeField.Segment segment={segment} />}
@@ -345,7 +345,7 @@ export const AllVariations: Story = {
           <Label>Time</Label>
           <TimeField.Group>
             <TimeField.Prefix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+              <Clock className="size-4 text-muted" />
             </TimeField.Prefix>
             <TimeField.Input>
               {(segment) => <TimeField.Segment segment={segment} />}
@@ -361,7 +361,7 @@ export const AllVariations: Story = {
               {(segment) => <TimeField.Segment segment={segment} />}
             </TimeField.Input>
             <TimeField.Suffix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+              <Clock className="size-4 text-muted" />
             </TimeField.Suffix>
           </TimeField.Group>
           <Description>Enter a time</Description>
@@ -371,13 +371,13 @@ export const AllVariations: Story = {
           <Label>Time</Label>
           <TimeField.Group>
             <TimeField.Prefix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:clock" />
+              <Clock className="size-4 text-muted" />
             </TimeField.Prefix>
             <TimeField.Input>
               {(segment) => <TimeField.Segment segment={segment} />}
             </TimeField.Input>
             <TimeField.Suffix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:chevron-down" />
+              <ChevronDown className="size-4 text-muted" />
             </TimeField.Suffix>
           </TimeField.Group>
           <Description>Enter a time</Description>

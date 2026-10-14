@@ -1,7 +1,7 @@
 import type {ChipProps} from "./index";
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Circle, CircleDashed} from "lucide-react";
 import React from "react";
 
 import {Separator} from "../separator";
@@ -14,13 +14,13 @@ export default {
       control: "select",
       options: ["accent", "default", "success", "warning", "danger"],
     },
-    variant: {
-      control: "select",
-      options: ["primary", "secondary", "tertiary", "soft"],
-    },
     size: {
       control: "select",
       options: ["sm", "md", "lg"],
+    },
+    variant: {
+      control: "select",
+      options: ["primary", "secondary", "tertiary", "soft"],
     },
     //  TODO: Add sizes
   },
@@ -60,9 +60,9 @@ const SizesTemplate = (props: ChipProps) => (
 const WithIconTemplate = (props: ChipProps) => (
   <div className="flex items-center gap-3">
     <Chip {...props}>
-      <Icon icon="gravity-ui:circle-dashed" />
+      <CircleDashed />
       <Chip.Label>Label</Chip.Label>
-      <Icon icon="gravity-ui:circle-dashed" />
+      <CircleDashed />
     </Chip>
   </div>
 );
@@ -75,19 +75,19 @@ const StatusesTemplate = (props: ChipProps) => {
       {variants.map((variant) => (
         <div key={variant} className="flex items-center gap-3">
           <Chip {...props} variant={variant}>
-            <Icon icon="gravity-ui:circle-fill" width={6} />
+            <Circle fill="currentColor" size={6} />
             <Chip.Label>Information</Chip.Label>
           </Chip>
           <Chip {...props} color="success" variant={variant}>
-            <Icon icon="gravity-ui:circle-fill" width={6} />
+            <Circle fill="currentColor" size={6} />
             <Chip.Label>Completed</Chip.Label>
           </Chip>
           <Chip {...props} color="warning" variant={variant}>
-            <Icon icon="gravity-ui:circle-fill" width={6} />
+            <Circle fill="currentColor" size={6} />
             <Chip.Label>Pending</Chip.Label>
           </Chip>
           <Chip {...props} color="danger" variant={variant}>
-            <Icon icon="gravity-ui:circle-fill" width={6} />
+            <Circle fill="currentColor" size={6} />
             <Chip.Label>Failed</Chip.Label>
           </Chip>
         </div>
@@ -131,9 +131,9 @@ const VariantsTemplate = (props: ChipProps) => {
                       style={{width: "130px"}}
                     >
                       <Chip {...props} color={color} size={size} variant={variant}>
-                        <Icon icon="gravity-ui:circle-dashed" />
+                        <CircleDashed />
                         <Chip.Label>Label</Chip.Label>
-                        <Icon icon="gravity-ui:circle-dashed" />
+                        <CircleDashed />
                       </Chip>
                     </div>
                   ))}

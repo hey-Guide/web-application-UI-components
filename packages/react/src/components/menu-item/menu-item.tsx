@@ -94,14 +94,15 @@ const MenuItemIndicator = <E extends keyof React.JSX.IntrinsicElements = "span">
         fill="none"
         role="presentation"
         stroke="currentColor"
-        strokeDasharray={22}
-        strokeDashoffset={isSelected ? 44 : 66}
+        strokeDasharray={23}
+        strokeDashoffset={isSelected ? 46 : 69}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        viewBox="0 0 17 18"
+        strokeWidth={3}
+        viewBox="0 0 24 24"
       >
-        <polyline points="1 9 7 14 15 4" />
+        {/* Lucide `check`, drawn left to right for the draw-on animation */}
+        <path d="M4 12l5 5L20 6" />
       </svg>
     );
 

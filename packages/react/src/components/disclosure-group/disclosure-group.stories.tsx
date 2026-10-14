@@ -3,7 +3,7 @@ import type {ButtonProps} from "@heroui/react";
 import type {Meta} from "@storybook/react";
 import type {SVGProps} from "react";
 
-import {Icon} from "@iconify/react";
+import {ChevronDown, ChevronUp, Download, QrCode, Smartphone} from "lucide-react";
 import React from "react";
 import {cn} from "tailwind-variants";
 
@@ -15,12 +15,12 @@ import {DisclosureGroup, useDisclosureGroupNavigation} from "./index";
 
 export default {
   argTypes: {
-    isDisabled: {
+    allowsMultipleExpanded: {
       control: {
         type: "boolean",
       },
     },
-    allowsMultipleExpanded: {
+    isDisabled: {
       control: {
         type: "boolean",
       },
@@ -34,8 +34,8 @@ export default {
 } as Meta<typeof DisclosureGroup>;
 
 const defaultArgs: DisclosureGroupProps = {
-  isDisabled: false,
   allowsMultipleExpanded: false,
+  isDisabled: false,
 };
 
 const Template = (props: DisclosureGroupProps) => {
@@ -55,7 +55,7 @@ const Template = (props: DisclosureGroupProps) => {
                 })}
               >
                 <div className="flex w-full items-center justify-start gap-2">
-                  <Icon icon="gravity-ui:qr-code" />
+                  <QrCode />
                   Preview HeroUI Native
                 </div>
                 <Disclosure.Indicator className="text-muted" />
@@ -73,7 +73,7 @@ const Template = (props: DisclosureGroupProps) => {
                 />
                 <p className="text-sm text-muted">Expo must be installed on your device.</p>
                 <Button className="mt-4" variant="primary">
-                  <Icon className="[&_path]:fill-accent-foreground" icon="logos:expo-icon" />
+                  <Smartphone className="[&_path]:fill-accent-foreground" />
                   Preview on Expo Go
                 </Button>
               </Disclosure.Body>
@@ -90,7 +90,7 @@ const Template = (props: DisclosureGroupProps) => {
                 })}
               >
                 <div className="flex w-full items-center justify-start gap-2">
-                  <Icon icon="tabler:brand-apple-filled" />
+                  <Download />
                   Download HeroUI Native
                 </div>
                 <Disclosure.Indicator className="text-muted" />
@@ -108,7 +108,7 @@ const Template = (props: DisclosureGroupProps) => {
                 />
                 <p className="text-sm text-muted">Expo must be installed on your device.</p>
                 <Button className="mt-4" variant="primary">
-                  <Icon icon="tabler:brand-apple-filled" />
+                  <Download />
                   Download on App Store
                 </Button>
               </Disclosure.Body>
@@ -143,7 +143,7 @@ const ControlledTemplate = (props: DisclosureGroupProps) => {
               variant="secondary"
               onPress={onPrevious}
             >
-              <Icon className="size-4" icon="lucide:chevron-up" />
+              <ChevronUp className="size-4" />
             </Button>
             <Button
               aria-label="Next disclosure"
@@ -152,7 +152,7 @@ const ControlledTemplate = (props: DisclosureGroupProps) => {
               variant="secondary"
               onPress={onNext}
             >
-              <Icon className="size-4" icon="lucide:chevron-down" />
+              <ChevronDown className="size-4" />
             </Button>
           </div>
         </div>
@@ -167,7 +167,7 @@ const ControlledTemplate = (props: DisclosureGroupProps) => {
                 })}
               >
                 <div className="flex w-full items-center justify-start gap-2">
-                  <Icon icon="gravity-ui:qr-code" />
+                  <QrCode />
                   Preview HeroUI Native
                 </div>
                 <Disclosure.Indicator className="text-muted" />
@@ -185,7 +185,7 @@ const ControlledTemplate = (props: DisclosureGroupProps) => {
                 />
                 <p className="text-sm text-muted">Expo must be installed on your device.</p>
                 <Button className="mt-4" variant="primary">
-                  <Icon className="[&_path]:fill-accent-foreground" icon="logos:expo-icon" />
+                  <Smartphone className="[&_path]:fill-accent-foreground" />
                   Preview on Expo Go
                 </Button>
               </Disclosure.Body>
@@ -202,7 +202,7 @@ const ControlledTemplate = (props: DisclosureGroupProps) => {
                 })}
               >
                 <div className="flex w-full items-center justify-start gap-2">
-                  <Icon icon="tabler:brand-apple-filled" />
+                  <Download />
                   Download HeroUI Native
                 </div>
                 <Disclosure.Indicator className="text-muted" />
@@ -220,7 +220,7 @@ const ControlledTemplate = (props: DisclosureGroupProps) => {
                 />
                 <p className="text-sm text-muted">Expo must be installed on your device.</p>
                 <Button className="mt-4" variant="primary">
-                  <Icon icon="tabler:brand-apple-filled" />
+                  <Download />
                   Download on App Store
                 </Button>
               </Disclosure.Body>
@@ -285,59 +285,59 @@ function PlusIcon({className, height = 24, width = 24, ...props}: SVGProps<SVGSV
 
 const showcase1Items = [
   {
-    id: "colors",
-    label: "Colors",
     content: "Choose from three bold finishes. iPhone 17 Pro shown in Cosmic Orange.",
+    id: "colors",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/colors_orange__f2ug4x6ry8uq_large_2x.jpg",
+    label: "Colors",
   },
   {
-    id: "aluminum",
-    label: "Aluminum unibody",
     content:
       "Optimized for performance and battery. Aluminum alloy is remarkably light and has exceptional thermal conductivity.",
+    id: "aluminum",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/viewer_aluminum_endframe__fypyvk9kkg2m_large_2x.jpg",
+    label: "Aluminum unibody",
   },
   {
-    id: "vapor-chamber",
-    label: "Vapor chamber",
     content:
       "Deionized water sealed inside moves heat away from the A19 Pro chip, allowing for even higher sustained performance.",
+    id: "vapor-chamber",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/viewer_vapor_chamber_endframe__dst8qkmuys4m_large_2x.jpg",
+    label: "Vapor chamber",
   },
   {
-    id: "ceramic-shield",
-    label: "Ceramic shield",
     content:
       "Protects the back of iPhone 17 Pro, making it 4x more resistant to cracks. New Ceramic Shield 2 on the front has 3x better scratch resistance.",
+    id: "ceramic-shield",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/ceramic_shield__de0653vp43cm_large_2x.jpg",
+    label: "Ceramic shield",
   },
   {
-    id: "immersive-pro-display",
-    label: "Immersive pro display",
     content:
       "Our best‑ever 6.3‑inch and 6.9‑inch Super Retina XDR displays.5 Brighter. Better anti‑reflection. ProMotion up to 120Hz.",
+    id: "immersive-pro-display",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/pro_display__c0jmzc5emcae_large_2x.jpg",
+    label: "Immersive pro display",
   },
   {
-    id: "camera-control",
-    label: "Camera control",
     content:
       "Instantly take a photo, record video, adjust settings, and more. So you never miss a moment.",
+    id: "camera-control",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/camera_control__cy5kilwa0kwi_large_2x.jpg",
+    label: "Camera control",
   },
   {
-    id: "action-button",
-    label: "Action button",
     content:
       " A customizable fast track to your favorite feature. Long press to launch the action you want — Silent mode, Translation, Shortcuts, and more.",
+    id: "action-button",
     imgSrc:
       "https://www.apple.com/v/iphone-17-pro/a/images/overview/product-viewer/viewer_action_button_startframe__bb2coc4lpj2a_large_2x.jpg",
+    label: "Action button",
   },
 ];
 
@@ -484,6 +484,6 @@ export const Showcase1 = {
   args: {
     children: null,
   },
-  render: Showcase1Template,
   name: "Showcases/Apple iPhone 17 Pro Disclosure Group",
+  render: Showcase1Template,
 };

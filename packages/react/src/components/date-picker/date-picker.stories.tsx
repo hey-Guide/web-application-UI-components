@@ -1,8 +1,8 @@
 import type {DateValue} from "@internationalized/date";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
 import {getLocalTimeZone, today} from "@internationalized/date";
+import {ChevronDown} from "lucide-react";
 import React, {useState} from "react";
 
 import {Button} from "../button";
@@ -147,7 +147,7 @@ export const WithCustomIndicator: Story = {
         <DateField.Suffix>
           <DatePicker.Trigger>
             <DatePicker.TriggerIndicator>
-              <Icon className="size-4" icon="gravity-ui:chevron-down" />
+              <ChevronDown className="size-4" />
             </DatePicker.TriggerIndicator>
           </DatePicker.Trigger>
         </DateField.Suffix>

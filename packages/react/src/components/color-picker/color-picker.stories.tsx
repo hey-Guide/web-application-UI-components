@@ -1,7 +1,7 @@
 import type {ColorChannel, ColorSpace} from "../rac";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Shuffle} from "lucide-react";
 import React from "react";
 import {parseColor} from "react-aria-components/ColorArea";
 
@@ -124,7 +124,7 @@ export const Controlled: Story = {
                 variant="tertiary"
                 onPress={shuffleColor}
               >
-                <Icon className="size-4" icon="gravity-ui:shuffle" />
+                <Shuffle className="size-4" />
               </Button>
             </div>
             <ColorField aria-label="Color field">
@@ -193,8 +193,8 @@ export const WidthFields: Story = {
     const [colorSpace, setColorSpace] = React.useState<ColorSpace>("hsl");
 
     const colorChannelsByColorSpace: Record<ColorSpace, ColorChannel[]> = {
-      hsl: ["hue", "saturation", "lightness"],
       hsb: ["hue", "saturation", "brightness"],
+      hsl: ["hue", "saturation", "lightness"],
       rgb: ["red", "green", "blue"],
     };
 
@@ -267,8 +267,8 @@ export const WithSliders: Story = {
     const [colorSpace, setColorSpace] = React.useState<ColorSpace>("hsl");
 
     const colorChannelsByColorSpace: Record<ColorSpace, ColorChannel[]> = {
-      hsl: ["hue", "saturation", "lightness", "alpha"],
       hsb: ["hue", "saturation", "brightness", "alpha"],
+      hsl: ["hue", "saturation", "lightness", "alpha"],
       rgb: ["red", "green", "blue", "alpha"],
     };
 

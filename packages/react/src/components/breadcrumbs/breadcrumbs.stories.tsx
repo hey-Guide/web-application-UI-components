@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {ChevronRight} from "lucide-react";
 import React from "react";
 
 import {Breadcrumbs, BreadcrumbsItem} from "./index";
@@ -42,7 +42,7 @@ const Level2Template = () => (
 );
 
 const CustomSeparatorTemplate = () => (
-  <Breadcrumbs separator={<Icon icon="gravity-ui:caret-right" />}>
+  <Breadcrumbs separator={<ChevronRight />}>
     <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
     <BreadcrumbsItem href="#">Products</BreadcrumbsItem>
     <BreadcrumbsItem href="#">Electronics</BreadcrumbsItem>

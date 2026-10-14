@@ -1,7 +1,7 @@
 import type {PaginationProps} from "./index";
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {ArrowLeft, ArrowRight} from "lucide-react";
 import React from "react";
 
 import {Separator} from "../separator";
@@ -248,7 +248,7 @@ const CustomIconsTemplate = (props: PaginationProps) => (
       <Pagination.Item>
         <Pagination.Previous>
           <Pagination.PreviousIcon>
-            <Icon icon="gravity-ui:arrow-left" />
+            <ArrowLeft />
           </Pagination.PreviousIcon>
           <span>Back</span>
         </Pagination.Previous>
@@ -266,7 +266,7 @@ const CustomIconsTemplate = (props: PaginationProps) => (
         <Pagination.Next>
           <span>Forward</span>
           <Pagination.NextIcon>
-            <Icon icon="gravity-ui:arrow-right" />
+            <ArrowRight />
           </Pagination.NextIcon>
         </Pagination.Next>
       </Pagination.Item>
