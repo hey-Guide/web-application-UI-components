@@ -30,6 +30,7 @@ packages/
 ├── storybook/   @heroui/storybook – Storybook to browse and develop the components
 ├── testing/     @heroui/testing – shared Vitest (jsdom and Playwright) setup
 └── standard/    @heroui/standard – shared ESLint, Prettier and TypeScript config
+brand/logos/        heyGuide logos (SVG)
 skills/, prompts/   HeroUI's AI-assistant skills and prompts (they read heroui.com)
 ```
 
@@ -100,6 +101,29 @@ In the app, depend on both tarballs. Add an override so `@heroui/react` also use
 ```
 
 To share the packages across projects, publish the tarballs to a private registry. Rename them to our own scope first (for example `@heyguide/react`) so they can't clash with the public `@heroui/*` packages.
+
+## Brand
+
+The heyGuide logos are in [`brand/logos/`](./brand/logos/), as SVGs 390 × 98 px:
+
+| File | Use |
+| --- | --- |
+| `heyguide-logo-color.svg` | The full-colour logo: "hey!" in brand pink, "Guide" in brand blue |
+| `heyguide-logo-mono-blue.svg` | Single colour, brand blue |
+| `heyguide-logo-mono-pink.svg` | Single colour, brand pink |
+
+The lettering is white inside the coloured shapes, so the logos work on light and dark backgrounds. Use them as images (`<img src="…/heyguide-logo-color.svg" alt="heyGuide">`); don't recolour or redraw them.
+
+The brand colours are theme variables in `@heroui/styles` (the same in light and dark) and Tailwind colours:
+
+| Variable | Value | Tailwind | Contrast |
+| --- | --- | --- | --- |
+| `--brand-blue` | `#1c496d` | `bg-brand-blue`, `text-brand-blue` | 9.4:1 with white |
+| `--brand-blue-light` | `#c7d4ef` | `bg-brand-blue-light` | brand blue on it 6.3:1 |
+| `--brand-pink` | `#e6146d` | `bg-brand-pink`, `text-brand-pink` | 4.48:1 with white, just under AA (4.5:1) for small text |
+| `--brand-pink-light` | `#fdebf1` | `bg-brand-pink-light` | brand pink on it 3.9:1, large text only |
+
+The components still use the theme's own roles (`accent`, `danger`, …); the brand colours are for brand surfaces such as headers, marketing blocks and illustrations.
 
 ## Updating from upstream
 
