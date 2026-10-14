@@ -1,7 +1,7 @@
 import type {Selection} from "@react-types/shared";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Check, Pencil, SquarePlus, Trash2} from "lucide-react";
+import {Check, Pencil, SquarePlus, Trash} from "lucide-react";
 import * as React from "react";
 import {ListLayout, Virtualizer} from "react-aria-components/Virtualizer";
 
@@ -109,7 +109,7 @@ export const WithSections: Story = {
           <Header>Danger zone</Header>
           <ListBox.Item id="delete-file" textValue="Delete file" variant="danger">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Trash2 className="size-4 shrink-0 text-danger" />
+              <Trash className="size-4 shrink-0 text-danger" />
             </div>
             <div className="flex flex-col">
               <Label>Delete file</Label>
@@ -171,7 +171,7 @@ export const WithDisabledItems: Story = {
           <Header>Danger zone</Header>
           <ListBox.Item id="delete-file" textValue="Delete file" variant="danger">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Trash2 className="size-4 shrink-0 text-danger" />
+              <Trash className="size-4 shrink-0 text-danger" />
             </div>
             <div className="flex flex-col">
               <Label>Delete file</Label>

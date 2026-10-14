@@ -18,7 +18,7 @@ import {
   TextAlignStart,
   ThumbsDown,
   ThumbsUp,
-  Trash2,
+  Trash,
   Video,
 } from "lucide-react";
 import React from "react";
@@ -283,7 +283,7 @@ export const WithIcons: Story = {
           </Button>
           <Button>
             <ButtonGroup.Separator />
-            <Trash2 />
+            <Trash />
             Delete
           </Button>
         </ButtonGroup>
@@ -300,7 +300,7 @@ export const WithIcons: Story = {
           </Button>
           <Button isIconOnly>
             <ButtonGroup.Separator />
-            <Trash2 />
+            <Trash />
           </Button>
         </ButtonGroup>
       </div>

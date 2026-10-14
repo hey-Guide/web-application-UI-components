@@ -577,7 +577,7 @@ This workflow ensures thorough understanding, proper planning, and high-quality 
 
 **IMPORTANT**: heyGuide uses the [Lucide](https://lucide.dev) icon system (`lucide-react`), for the library's built-in icons and in stories and demos alike.
 
-- Import icons as React components: `import {Mail, Trash2} from "lucide-react";`. Do not add Iconify, Gravity UI or another icon set.
+- Import icons as React components: `import {Mail, Trash} from "lucide-react";`. Do not add Iconify, Gravity UI or another icon set.
 - The library's own icons in `packages/react/src/components/icons.tsx` wrap Lucide icons and keep their HeroUI export names (`IconChevronDown`, `CloseIcon`, …); they default to 16px and `aria-hidden`.
 - Lucide icons are stroked (`stroke="currentColor"`, 24×24 grid, stroke width 2). Change weight with `strokeWidth`, never by filling paths; a filled state (a liked heart) is the same icon with `fill="currentColor"`.
 - Lucide has no brand logos. Brand marks (Google, Apple, GitHub…) are separate SVG assets, not icons.

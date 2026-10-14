@@ -6,7 +6,7 @@ import {
   LockOpen,
   Rocket,
   Sparkles,
-  Trash2,
+  Trash,
   TriangleAlert,
 } from "lucide-react";
 import React, {useCallback, useRef, useState} from "react";
@@ -622,7 +622,7 @@ export const CustomTrigger = () => (
   <AlertDialog>
     <AlertDialog.Trigger className="group flex items-center gap-3 rounded-2xl bg-surface p-4 shadow-xs select-none hover:bg-surface-secondary">
       <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-danger-soft text-danger-soft-foreground">
-        <Trash2 className="size-6" />
+        <Trash className="size-6" />
       </div>
       <div className="flex flex-1 flex-col gap-0.5">
         <p className="text-sm font-semibold">Delete Item</p>
@@ -635,7 +635,7 @@ export const CustomTrigger = () => (
           <AlertDialog.CloseTrigger />
           <AlertDialog.Header>
             <AlertDialog.Icon status="danger">
-              <Trash2 className="size-5" />
+              <Trash className="size-5" />
             </AlertDialog.Icon>
             <AlertDialog.Heading>Delete this item?</AlertDialog.Heading>
           </AlertDialog.Header>

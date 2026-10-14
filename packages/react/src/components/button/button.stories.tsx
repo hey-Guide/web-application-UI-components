@@ -1,6 +1,6 @@
 import type {Meta} from "@storybook/react";
 
-import {Ellipsis, Globe, LogIn, Mail, Paperclip, Plus, Trash2} from "lucide-react";
+import {Ellipsis, Globe, LogIn, Mail, Paperclip, Plus, Trash} from "lucide-react";
 import React, {useState} from "react";
 
 import {Spinner} from "../spinner";
@@ -88,11 +88,11 @@ const TemplateWithIcon = ({isDisabled, size}: Button["RootProps"]) => (
       Email
     </Button>
     <Button isDisabled={isDisabled} size={size} variant="danger">
-      <Trash2 />
+      <Trash />
       Delete
     </Button>
     <Button isDisabled={isDisabled} size={size} variant="danger-soft">
-      <Trash2 />
+      <Trash />
       Cancel
     </Button>
   </div>

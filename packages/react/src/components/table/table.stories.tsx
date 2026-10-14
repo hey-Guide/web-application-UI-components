@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from "@storybook/react";
 import type {Selection, SortDescriptor} from "react-aria-components/Table";
 
 import {cn} from "@heroui/styles";
-import {ChevronRight, Copy, Eye, Inbox, Pencil, Trash2} from "lucide-react";
+import {ChevronRight, Copy, Eye, Inbox, Pencil, Trash} from "lucide-react";
 import React from "react";
 import {TableLayout, Virtualizer} from "react-aria-components/Virtualizer";
 
@@ -364,7 +364,7 @@ function DefaultTableTemplate({variant = "primary"}: {variant?: "primary" | "sec
                         <Pencil className="size-4" />
                       </Button>
                       <Button isIconOnly size="sm" variant="danger-soft">
-                        <Trash2 className="size-4" />
+                        <Trash className="size-4" />
                       </Button>
                     </div>
                   </Table.Cell>
