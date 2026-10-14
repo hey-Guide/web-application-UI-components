@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {ArrowUp, AtSign, Copy, Eye, EyeOff, Globe, Mail, Mic, Plug, Plus} from "lucide-react";
 import React, {useState} from "react";
 
 import {Button} from "../button";
@@ -33,7 +33,7 @@ export const Default: Story = {
       <Label>Email address</Label>
       <InputGroup>
         <InputGroup.Prefix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+          <Mail className="size-4 text-muted" />
         </InputGroup.Prefix>
         <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
       </InputGroup>
@@ -48,7 +48,7 @@ export const Variants: Story = {
         <Label>Primary variant</Label>
         <InputGroup variant="primary">
           <InputGroup.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+            <Mail className="size-4 text-muted" />
           </InputGroup.Prefix>
           <InputGroup.Input placeholder="name@email.com" />
         </InputGroup>
@@ -57,7 +57,7 @@ export const Variants: Story = {
         <Label>Secondary variant</Label>
         <InputGroup variant="secondary">
           <InputGroup.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+            <Mail className="size-4 text-muted" />
           </InputGroup.Prefix>
           <InputGroup.Input placeholder="name@email.com" />
         </InputGroup>
@@ -73,7 +73,7 @@ export const FullWidth: Story = {
         <Label>Email address</Label>
         <InputGroup fullWidth>
           <InputGroup.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+            <Mail className="size-4 text-muted" />
           </InputGroup.Prefix>
           <InputGroup.Input placeholder="name@email.com" />
         </InputGroup>
@@ -83,7 +83,7 @@ export const FullWidth: Story = {
         <InputGroup fullWidth>
           <InputGroup.Input placeholder="Enter password" type="password" />
           <InputGroup.Suffix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:eye" />
+            <Eye className="size-4 text-muted" />
           </InputGroup.Suffix>
         </InputGroup>
       </TextField>
@@ -97,7 +97,7 @@ export const WithPrefixIcon: Story = {
       <Label>Email address</Label>
       <InputGroup>
         <InputGroup.Prefix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+          <Mail className="size-4 text-muted" />
         </InputGroup.Prefix>
         <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
       </InputGroup>
@@ -113,7 +113,7 @@ export const WithSuffixIcon: Story = {
       <InputGroup>
         <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
         <InputGroup.Suffix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+          <Mail className="size-4 text-muted" />
         </InputGroup.Suffix>
       </InputGroup>
       <Description>We don't send spam</Description>
@@ -165,7 +165,7 @@ export const WithIconPrefixAndTextSuffix: Story = {
       <Label>Website</Label>
       <InputGroup>
         <InputGroup.Prefix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:globe" />
+          <Globe className="size-4 text-muted" />
         </InputGroup.Prefix>
         <InputGroup.Input className="w-[280px]" />
         <InputGroup.Suffix>.com</InputGroup.Suffix>
@@ -182,7 +182,7 @@ export const WithCopySuffix: Story = {
         <InputGroup.Input className="w-[280px]" />
         <InputGroup.Suffix className="pe-0">
           <Button isIconOnly aria-label="Copy" size="sm" variant="ghost">
-            <Icon className="size-4" icon="gravity-ui:copy" />
+            <Copy className="size-4" />
           </Button>
         </InputGroup.Suffix>
       </InputGroup>
@@ -196,12 +196,12 @@ export const WithIconPrefixAndCopySuffix: Story = {
       <Label>Website</Label>
       <InputGroup>
         <InputGroup.Prefix>
-          <Icon className="size-4 text-muted" icon="gravity-ui:globe" />
+          <Globe className="size-4 text-muted" />
         </InputGroup.Prefix>
         <InputGroup.Input className="w-[280px]" />
         <InputGroup.Suffix className="pe-0">
           <Button isIconOnly aria-label="Copy" size="sm" variant="ghost">
-            <Icon className="size-4" icon="gravity-ui:copy" />
+            <Copy className="size-4" />
           </Button>
         </InputGroup.Suffix>
       </InputGroup>
@@ -230,10 +230,7 @@ export const PasswordWithToggle: Story = {
               variant="ghost"
               onPress={() => setIsVisible(!isVisible)}
             >
-              <Icon
-                className="size-4"
-                icon={isVisible ? "gravity-ui:eye" : "gravity-ui:eye-slash"}
-              />
+              {isVisible ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
             </Button>
           </InputGroup.Suffix>
         </InputGroup>
@@ -293,7 +290,7 @@ export const Required: Story = {
         <Label>Email address</Label>
         <InputGroup>
           <InputGroup.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+            <Mail className="size-4 text-muted" />
           </InputGroup.Prefix>
           <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
         </InputGroup>
@@ -318,7 +315,7 @@ export const Invalid: Story = {
         <Label>Email address</Label>
         <InputGroup>
           <InputGroup.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+            <Mail className="size-4 text-muted" />
           </InputGroup.Prefix>
           <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
         </InputGroup>
@@ -344,7 +341,7 @@ export const Disabled: Story = {
         <Label>Email address</Label>
         <InputGroup>
           <InputGroup.Prefix>
-            <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+            <Mail className="size-4 text-muted" />
           </InputGroup.Prefix>
           <InputGroup.Input className="w-[280px]" />
         </InputGroup>
@@ -387,7 +384,7 @@ export const WithTextArea: Story = {
         <InputGroup fullWidth className="flex flex-col gap-2 rounded-3xl py-2">
           <InputGroup.Prefix className="px-3 py-0">
             <Button aria-label="Add context" size="sm" variant="outline">
-              <Icon icon="gravity-ui:at" />
+              <AtSign />
               Add Context
             </Button>
           </InputGroup.Prefix>
@@ -401,7 +398,7 @@ export const WithTextArea: Story = {
           <InputGroup.Suffix className="flex w-full items-center gap-1.5 px-3 py-0">
             <Tooltip delay={0}>
               <Button isIconOnly aria-label="Attach file" size="sm" variant="tertiary">
-                <Icon icon="gravity-ui:plus" />
+                <Plus />
               </Button>
               <Tooltip.Content>
                 <p className="text-xs">Add a files and more</p>
@@ -409,7 +406,7 @@ export const WithTextArea: Story = {
             </Tooltip>
             <Tooltip delay={0}>
               <Button isIconOnly aria-label="Connect Apps" size="sm" variant="tertiary">
-                <Icon icon="gravity-ui:plug-connection" />
+                <Plug />
               </Button>
               <Tooltip.Content>
                 <p className="text-xs">Connect apps</p>
@@ -418,7 +415,7 @@ export const WithTextArea: Story = {
             <div className="ms-auto flex items-center gap-1.5">
               <Tooltip delay={0}>
                 <Button isIconOnly aria-label="Voice input" size="sm" variant="ghost">
-                  <Icon icon="gravity-ui:microphone" />
+                  <Mic />
                 </Button>
                 <Tooltip.Content>
                   <p className="text-xs">Voice input</p>
@@ -433,11 +430,7 @@ export const WithTextArea: Story = {
                   onPress={handleSubmit}
                 >
                   {({isPending}) =>
-                    isPending ? (
-                      <Spinner color="current" size="sm" />
-                    ) : (
-                      <Icon icon="gravity-ui:arrow-up" />
-                    )
+                    isPending ? <Spinner color="current" size="sm" /> : <ArrowUp />
                   }
                 </Button>
                 <Tooltip.Content className="flex items-center gap-1">
@@ -463,7 +456,7 @@ export const AllVariations: Story = {
           <Label>Email address *</Label>
           <InputGroup>
             <InputGroup.Prefix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+              <Mail className="size-4 text-muted" />
             </InputGroup.Prefix>
             <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
           </InputGroup>
@@ -475,7 +468,7 @@ export const AllVariations: Story = {
           <InputGroup>
             <InputGroup.Input className="w-[280px]" placeholder="name@email.com" />
             <InputGroup.Suffix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:envelope" />
+              <Mail className="size-4 text-muted" />
             </InputGroup.Suffix>
           </InputGroup>
           <Description>We don't send spam</Description>
@@ -511,7 +504,7 @@ export const AllVariations: Story = {
           <Label>Website</Label>
           <InputGroup>
             <InputGroup.Prefix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:globe" />
+              <Globe className="size-4 text-muted" />
             </InputGroup.Prefix>
             <InputGroup.Input className="w-[280px]" />
             <InputGroup.Suffix>.com</InputGroup.Suffix>
@@ -524,7 +517,7 @@ export const AllVariations: Story = {
             <InputGroup.Input className="w-[280px]" />
             <InputGroup.Suffix className="pe-0">
               <Button isIconOnly aria-label="Copy" className="h-auto p-0" size="sm" variant="ghost">
-                <Icon className="size-4" icon="gravity-ui:copy" />
+                <Copy className="size-4" />
               </Button>
             </InputGroup.Suffix>
           </InputGroup>
@@ -534,12 +527,12 @@ export const AllVariations: Story = {
           <Label>Website</Label>
           <InputGroup>
             <InputGroup.Prefix>
-              <Icon className="size-4 text-muted" icon="gravity-ui:globe" />
+              <Globe className="size-4 text-muted" />
             </InputGroup.Prefix>
             <InputGroup.Input className="w-[280px]" />
             <InputGroup.Suffix className="pe-0">
               <Button isIconOnly aria-label="Copy" className="h-auto p-0" size="sm" variant="ghost">
-                <Icon className="size-4" icon="gravity-ui:copy" />
+                <Copy className="size-4" />
               </Button>
             </InputGroup.Suffix>
           </InputGroup>

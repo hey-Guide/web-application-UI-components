@@ -1,8 +1,8 @@
 import type {Key} from "../rac";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
 import {useAsyncList} from "@react-stately/data";
+import {ChevronsUpDown} from "lucide-react";
 import React from "react";
 
 import {Avatar, AvatarFallback, AvatarImage} from "../avatar";
@@ -403,7 +403,7 @@ export const CustomIndicator: Story = {
       <Select.Trigger>
         <Select.Value />
         <Select.Indicator className="size-3">
-          <Icon icon="gravity-ui:chevrons-expand-vertical" />
+          <ChevronsUpDown />
         </Select.Indicator>
       </Select.Trigger>
       <Select.Popover>
@@ -537,39 +537,39 @@ export const CustomValue: Story = {
   render: () => {
     const users = [
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
+        email: "bob@heroui.com",
+        fallback: "B",
         id: "1",
         name: "Bob",
-        email: "bob@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
-        fallback: "B",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
+        email: "fred@heroui.com",
+        fallback: "F",
         id: "2",
         name: "Fred",
-        email: "fred@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
-        fallback: "F",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
+        email: "martha@heroui.com",
+        fallback: "M",
         id: "3",
         name: "Martha",
-        email: "martha@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
-        fallback: "M",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
+        email: "john@heroui.com",
+        fallback: "J",
         id: "4",
         name: "John",
-        email: "john@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
-        fallback: "J",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
+        email: "jane@heroui.com",
+        fallback: "J",
         id: "5",
         name: "Jane",
-        email: "jane@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
-        fallback: "J",
       },
     ];
 
@@ -634,39 +634,39 @@ export const CustomValueMultiple: Story = {
   render: () => {
     const users = [
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
+        email: "bob@heroui.com",
+        fallback: "B",
         id: "1",
         name: "Bob",
-        email: "bob@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
-        fallback: "B",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
+        email: "fred@heroui.com",
+        fallback: "F",
         id: "2",
         name: "Fred",
-        email: "fred@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
-        fallback: "F",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
+        email: "martha@heroui.com",
+        fallback: "M",
         id: "3",
         name: "Martha",
-        email: "martha@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
-        fallback: "M",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
+        email: "john@heroui.com",
+        fallback: "J",
         id: "4",
         name: "John",
-        email: "john@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
-        fallback: "J",
       },
       {
+        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
+        email: "jane@heroui.com",
+        fallback: "J",
         id: "5",
         name: "Jane",
-        email: "jane@heroui.com",
-        avatarUrl: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
-        fallback: "J",
       },
     ];
 
@@ -913,8 +913,8 @@ export const AsynchronousLoading: Story = {
         const json = await res.json();
 
         return {
-          items: json.results,
           cursor: json.next,
+          items: json.results,
         };
       },
     });

@@ -1,7 +1,7 @@
 import type {Selection} from "@react-types/shared";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Check, Pencil, SquarePlus, Trash} from "lucide-react";
 import * as React from "react";
 import {ListLayout, Virtualizer} from "react-aria-components/Virtualizer";
 
@@ -79,7 +79,7 @@ export const WithSections: Story = {
           <Header>Actions</Header>
           <ListBox.Item id="new-file" textValue="New file">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Icon className="size-4 shrink-0 text-muted" icon="gravity-ui:square-plus" />
+              <SquarePlus className="size-4 shrink-0 text-muted" />
             </div>
             <div className="flex flex-col">
               <Label>New file</Label>
@@ -92,7 +92,7 @@ export const WithSections: Story = {
           </ListBox.Item>
           <ListBox.Item id="edit-file" textValue="Edit file">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Icon className="size-4 shrink-0 text-muted" icon="gravity-ui:pencil" />
+              <Pencil className="size-4 shrink-0 text-muted" />
             </div>
             <div className="flex flex-col">
               <Label>Edit file</Label>
@@ -109,7 +109,7 @@ export const WithSections: Story = {
           <Header>Danger zone</Header>
           <ListBox.Item id="delete-file" textValue="Delete file" variant="danger">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Icon className="size-4 shrink-0 text-danger" icon="gravity-ui:trash-bin" />
+              <Trash className="size-4 shrink-0 text-danger" />
             </div>
             <div className="flex flex-col">
               <Label>Delete file</Label>
@@ -141,7 +141,7 @@ export const WithDisabledItems: Story = {
           <Header>Actions</Header>
           <ListBox.Item id="new-file" textValue="New file">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Icon className="size-4 shrink-0 text-muted" icon="gravity-ui:square-plus" />
+              <SquarePlus className="size-4 shrink-0 text-muted" />
             </div>
             <div className="flex flex-col">
               <Label>New file</Label>
@@ -154,7 +154,7 @@ export const WithDisabledItems: Story = {
           </ListBox.Item>
           <ListBox.Item id="edit-file" textValue="Edit file">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Icon className="size-4 shrink-0 text-muted" icon="gravity-ui:pencil" />
+              <Pencil className="size-4 shrink-0 text-muted" />
             </div>
             <div className="flex flex-col">
               <Label>Edit file</Label>
@@ -171,7 +171,7 @@ export const WithDisabledItems: Story = {
           <Header>Danger zone</Header>
           <ListBox.Item id="delete-file" textValue="Delete file" variant="danger">
             <div className="flex h-8 items-start justify-center pt-px">
-              <Icon className="size-4 shrink-0 text-danger" icon="gravity-ui:trash-bin" />
+              <Trash className="size-4 shrink-0 text-danger" />
             </div>
             <div className="flex flex-col">
               <Label>Delete file</Label>
@@ -245,9 +245,7 @@ export const CustomCheckIcon: Story = {
             <Description>bob@heroui.com</Description>
           </div>
           <ListBox.ItemIndicator>
-            {({isSelected}) =>
-              isSelected ? <Icon className="size-4 text-accent" icon="gravity-ui:check" /> : null
-            }
+            {({isSelected}) => (isSelected ? <Check className="size-4 text-accent" /> : null)}
           </ListBox.ItemIndicator>
         </ListBox.Item>
         <ListBox.Item id="2" textValue="Fred">
@@ -260,9 +258,7 @@ export const CustomCheckIcon: Story = {
             <Description>fred@heroui.com</Description>
           </div>
           <ListBox.ItemIndicator>
-            {({isSelected}) =>
-              isSelected ? <Icon className="size-4 text-accent" icon="gravity-ui:check" /> : null
-            }
+            {({isSelected}) => (isSelected ? <Check className="size-4 text-accent" /> : null)}
           </ListBox.ItemIndicator>
         </ListBox.Item>
         <ListBox.Item id="3" textValue="Martha">
@@ -275,9 +271,7 @@ export const CustomCheckIcon: Story = {
             <Description>martha@heroui.com</Description>
           </div>
           <ListBox.ItemIndicator>
-            {({isSelected}) =>
-              isSelected ? <Icon className="size-4 text-accent" icon="gravity-ui:check" /> : null
-            }
+            {({isSelected}) => (isSelected ? <Check className="size-4 text-accent" /> : null)}
           </ListBox.ItemIndicator>
         </ListBox.Item>
       </ListBox>
@@ -310,11 +304,7 @@ export const Controlled: Story = {
                 <Description>bob@heroui.com</Description>
               </div>
               <ListBox.ItemIndicator>
-                {({isSelected}) =>
-                  isSelected ? (
-                    <Icon className="size-4 text-accent" icon="gravity-ui:check" />
-                  ) : null
-                }
+                {({isSelected}) => (isSelected ? <Check className="size-4 text-accent" /> : null)}
               </ListBox.ItemIndicator>
             </ListBox.Item>
             <ListBox.Item id="2" textValue="Fred">
@@ -327,11 +317,7 @@ export const Controlled: Story = {
                 <Description>fred@heroui.com</Description>
               </div>
               <ListBox.ItemIndicator>
-                {({isSelected}) =>
-                  isSelected ? (
-                    <Icon className="size-4 text-accent" icon="gravity-ui:check" />
-                  ) : null
-                }
+                {({isSelected}) => (isSelected ? <Check className="size-4 text-accent" /> : null)}
               </ListBox.ItemIndicator>
             </ListBox.Item>
             <ListBox.Item id="3" textValue="Martha">
@@ -344,11 +330,7 @@ export const Controlled: Story = {
                 <Description>martha@heroui.com</Description>
               </div>
               <ListBox.ItemIndicator>
-                {({isSelected}) =>
-                  isSelected ? (
-                    <Icon className="size-4 text-accent" icon="gravity-ui:check" />
-                  ) : null
-                }
+                {({isSelected}) => (isSelected ? <Check className="size-4 text-accent" /> : null)}
               </ListBox.ItemIndicator>
             </ListBox.Item>
           </ListBox>
@@ -424,9 +406,9 @@ export const Virtualization: Story = {
         const name = `${firstName} ${lastName}`;
 
         users.push({
+          email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@acme.com`,
           id: i + 1,
           name,
-          email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@acme.com`,
         });
       }
 

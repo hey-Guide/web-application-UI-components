@@ -1,5 +1,5 @@
-import {FloppyDisk} from "@gravity-ui/icons";
 import {Avatar, Button, Card, CloseButton} from "@heroui/react";
+import {Save} from "lucide-react";
 import React from "react";
 
 export function AlertDialogDemo() {
@@ -8,7 +8,7 @@ export function AlertDialogDemo() {
       <Card.Header className="flex w-full items-start justify-center gap-2 px-1">
         <Avatar color="warning" variant="soft">
           <Avatar.Fallback>
-            <FloppyDisk className="text-lg" />
+            <Save className="text-lg" />
           </Avatar.Fallback>
         </Avatar>
         <Card.Title>Unsaved changes</Card.Title>

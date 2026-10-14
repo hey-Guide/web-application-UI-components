@@ -315,7 +315,7 @@ Storybook is the primary dev workflow — run with `pnpm dev` (port 6006).
 
 ### Icon Library
 
-HeroUI uses **Iconify** with **gravity-ui** as the default icon set.
+heyGuide uses the **Lucide** icon system (`lucide-react`) everywhere: the built-in icons in `packages/react/src/components/icons.tsx` wrap Lucide icons, and stories and demos import icons from `lucide-react`. Do not add Iconify, Gravity UI or another icon set; Lucide has no brand logos, so brand marks are separate SVG assets.
 
 ## Current Components
 

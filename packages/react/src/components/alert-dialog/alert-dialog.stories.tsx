@@ -1,6 +1,14 @@
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {
+  ArrowUpFromLine,
+  Info,
+  LockOpen,
+  Rocket,
+  Sparkles,
+  Trash,
+  TriangleAlert,
+} from "lucide-react";
 import React, {useCallback, useRef, useState} from "react";
 
 import {useOverlayState} from "../../hooks/use-overlay-state";
@@ -190,7 +198,7 @@ export const Sizes = () => {
                 <AlertDialog.CloseTrigger />
                 <AlertDialog.Header>
                   <AlertDialog.Icon className="bg-default text-foreground">
-                    <Icon className="size-5" icon="gravity-ui:rocket" />
+                    <Rocket className="size-5" />
                   </AlertDialog.Icon>
                   <AlertDialog.Heading>
                     Size: {size.charAt(0).toUpperCase() + size.slice(1)}
@@ -280,7 +288,7 @@ export const CustomIcon = () => (
           <AlertDialog.CloseTrigger />
           <AlertDialog.Header>
             <AlertDialog.Icon status="warning">
-              <Icon className="size-5" icon="gravity-ui:lock-open" />
+              <LockOpen className="size-5" />
             </AlertDialog.Icon>
             <AlertDialog.Heading>Reset your password?</AlertDialog.Heading>
           </AlertDialog.Header>
@@ -314,7 +322,7 @@ export const CustomBackdrop = () => (
           <AlertDialog.CloseTrigger />
           <AlertDialog.Header className="items-center text-center">
             <AlertDialog.Icon status="danger">
-              <Icon className="size-5" icon="gravity-ui:triangle-exclamation" />
+              <TriangleAlert className="size-5" />
             </AlertDialog.Icon>
             <AlertDialog.Heading>Permanently delete your account?</AlertDialog.Heading>
           </AlertDialog.Header>
@@ -356,7 +364,7 @@ export const DismissBehavior = () => (
               <AlertDialog.CloseTrigger />
               <AlertDialog.Header>
                 <AlertDialog.Icon status="danger">
-                  <Icon className="size-5" icon="gravity-ui:circle-info" />
+                  <Info className="size-5" />
                 </AlertDialog.Icon>
                 <AlertDialog.Heading>isDismissable = false</AlertDialog.Heading>
                 <p className="text-sm leading-5 text-muted">
@@ -396,7 +404,7 @@ export const DismissBehavior = () => (
               <AlertDialog.CloseTrigger />
               <AlertDialog.Header>
                 <AlertDialog.Icon status="accent">
-                  <Icon className="size-5" icon="gravity-ui:circle-info" />
+                  <Info className="size-5" />
                 </AlertDialog.Icon>
                 <AlertDialog.Heading>isKeyboardDismissDisabled = true</AlertDialog.Heading>
                 <p className="text-sm leading-5 text-muted">ESC key is disabled</p>
@@ -614,7 +622,7 @@ export const CustomTrigger = () => (
   <AlertDialog>
     <AlertDialog.Trigger className="group flex items-center gap-3 rounded-2xl bg-surface p-4 shadow-xs select-none hover:bg-surface-secondary">
       <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-danger-soft text-danger-soft-foreground">
-        <Icon className="size-6" icon="gravity-ui:trash-bin" />
+        <Trash className="size-6" />
       </div>
       <div className="flex flex-1 flex-col gap-0.5">
         <p className="text-sm font-semibold">Delete Item</p>
@@ -627,7 +635,7 @@ export const CustomTrigger = () => (
           <AlertDialog.CloseTrigger />
           <AlertDialog.Header>
             <AlertDialog.Icon status="danger">
-              <Icon className="size-5" icon="gravity-ui:trash-bin" />
+              <Trash className="size-5" />
             </AlertDialog.Icon>
             <AlertDialog.Heading>Delete this item?</AlertDialog.Heading>
           </AlertDialog.Header>
@@ -654,10 +662,6 @@ export const CustomTrigger = () => (
 export const CustomAnimations = () => {
   const animations = [
     {
-      name: "Kinematic Scale",
-      description:
-        "Physics-based elastic scaling. Simulates a high-damping spring system with fast transient response and prolonged settling time. Ideal for Alert Dialogs and Modals.",
-      icon: "gravity-ui:sparkles",
       classNames: {
         backdrop: [
           "data-[entering]:duration-400",
@@ -678,12 +682,12 @@ export const CustomAnimations = () => {
           "data-[exiting]:ease-[cubic-bezier(0.7,0,0.84,0)]",
         ].join(" "),
       },
+      description:
+        "Physics-based elastic scaling. Simulates a high-damping spring system with fast transient response and prolonged settling time. Ideal for Alert Dialogs and Modals.",
+      icon: Sparkles,
+      name: "Kinematic Scale",
     },
     {
-      name: "Fluid Slide",
-      description:
-        "Simulates movement through a medium with fluid resistance. Eliminates mechanical linearity for a natural, grounded feel. Perfect for Bottom Sheets or Toasts.",
-      icon: "gravity-ui:arrow-up-from-line",
       classNames: {
         backdrop: [
           "data-[entering]:duration-500",
@@ -704,12 +708,16 @@ export const CustomAnimations = () => {
           "data-[exiting]:ease-[cubic-bezier(0.5,0,0.75,0)]",
         ].join(" "),
       },
+      description:
+        "Simulates movement through a medium with fluid resistance. Eliminates mechanical linearity for a natural, grounded feel. Perfect for Bottom Sheets or Toasts.",
+      icon: ArrowUpFromLine,
+      name: "Fluid Slide",
     },
   ];
 
   return (
     <div className="flex flex-wrap gap-4">
-      {animations.map(({classNames, description, icon, name}) => (
+      {animations.map(({classNames, description, icon: AnimationIcon, name}) => (
         <AlertDialog key={name}>
           <Button variant="secondary">{name}</Button>
           <AlertDialog.Backdrop className={classNames.backdrop}>
@@ -718,7 +726,7 @@ export const CustomAnimations = () => {
                 <AlertDialog.CloseTrigger />
                 <AlertDialog.Header>
                   <AlertDialog.Icon status="accent">
-                    <Icon className="size-5" icon={icon} />
+                    <AnimationIcon className="size-5" />
                   </AlertDialog.Icon>
                   <AlertDialog.Heading>{name} Animation</AlertDialog.Heading>
                 </AlertDialog.Header>

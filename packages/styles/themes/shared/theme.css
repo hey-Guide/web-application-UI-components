@@ -42,6 +42,12 @@
 
   --color-backdrop: var(--backdrop);
 
+  /* heyGuide brand colours: bg-brand-blue, text-brand-pink, border-brand-blue-light, … */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-pink-light: var(--brand-pink-light);
+
   --shadow-surface: var(--surface-shadow);
   --shadow-overlay: var(--overlay-shadow);
   --shadow-field: var(--field-shadow);

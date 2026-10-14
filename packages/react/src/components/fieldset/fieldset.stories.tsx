@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Save} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -86,7 +86,7 @@ export const Default: Story = {
           </Fieldset.Group>
           <Fieldset.Actions>
             <Button type="submit">
-              <Icon icon="gravity-ui:floppy-disk" />
+              <Save />
               Save changes
             </Button>
             <Button type="reset" variant="tertiary">

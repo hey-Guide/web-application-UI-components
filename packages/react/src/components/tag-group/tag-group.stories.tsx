@@ -1,7 +1,7 @@
 import type {Key} from "../";
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {CircleX, Earth, FileText, Rocket, ShoppingBag} from "lucide-react";
 import React, {useMemo, useState} from "react";
 
 import {Avatar, Description, EmptyState, ErrorMessage, Label, Tag} from "../";
@@ -27,19 +27,19 @@ export const Default: Story = {
     <TagGroup aria-label="Tags" selectionMode="single">
       <TagGroup.List>
         <Tag id="default-news">
-          <Icon icon="gravity-ui:square-article" />
+          <FileText />
           News
         </Tag>
         <Tag id="default-travel">
-          <Icon icon="gravity-ui:planet-earth" />
+          <Earth />
           Travel
         </Tag>
         <Tag id="default-gaming">
-          <Icon icon="gravity-ui:rocket" />
+          <Rocket />
           Gaming
         </Tag>
         <Tag id="default-shopping">
-          <Icon icon="gravity-ui:shopping-bag" />
+          <ShoppingBag />
           Shopping
         </Tag>
       </TagGroup.List>
@@ -238,19 +238,19 @@ export const WithPrefix: Story = {
         <Label>With Icons</Label>
         <TagGroup.List>
           <Tag>
-            <Icon icon="gravity-ui:square-article" />
+            <FileText />
             News
           </Tag>
           <Tag>
-            <Icon icon="gravity-ui:planet-earth" />
+            <Earth />
             Travel
           </Tag>
           <Tag>
-            <Icon icon="gravity-ui:rocket" />
+            <Rocket />
             Gaming
           </Tag>
           <Tag>
-            <Icon icon="gravity-ui:shopping-bag" />
+            <ShoppingBag />
             Shopping
           </Tag>
         </TagGroup.List>
@@ -347,7 +347,7 @@ export const WithRemoveButton: Story = {
                       {tag.name}
                       {!!renderProps.allowsRemoving && (
                         <Tag.RemoveButton>
-                          <Icon icon="gravity-ui:circle-xmark-fill" />
+                          <CircleX />
                         </Tag.RemoveButton>
                       )}
                     </>
@@ -370,7 +370,7 @@ export const WithRemoveButton: Story = {
                 <Tag key={tag.id} id={tag.id} textValue={tag.name}>
                   {tag.name}
                   <Tag.RemoveButton>
-                    <Icon icon="gravity-ui:circle-xmark-fill" />
+                    <CircleX />
                   </Tag.RemoveButton>
                 </Tag>
               )}
@@ -393,46 +393,46 @@ export const WithListData: Story = {
     };
 
     const list = useListData<User>({
+      getKey: (item) => item.id,
       initialItems: [
         {
-          id: "fred",
-          name: "Fred",
           avatar: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
           fallback: "F",
+          id: "fred",
+          name: "Fred",
         },
         {
-          id: "michael",
-          name: "Michael",
           avatar: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
           fallback: "M",
+          id: "michael",
+          name: "Michael",
         },
         {
-          id: "jane",
-          name: "Jane",
           avatar: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
           fallback: "J",
+          id: "jane",
+          name: "Jane",
         },
         {
-          id: "alice",
-          name: "Alice",
           avatar: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
           fallback: "A",
+          id: "alice",
+          name: "Alice",
         },
         {
-          id: "bob",
-          name: "Bob",
           avatar: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
           fallback: "B",
+          id: "bob",
+          name: "Bob",
         },
         {
-          id: "charlie",
-          name: "Charlie",
           avatar: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/black.jpg",
           fallback: "C",
+          id: "charlie",
+          name: "Charlie",
         },
       ],
       initialSelectedKeys: new Set(["fred", "michael"]),
-      getKey: (item) => item.id,
     });
 
     const onRemove = (keys: Set<Key>) => {

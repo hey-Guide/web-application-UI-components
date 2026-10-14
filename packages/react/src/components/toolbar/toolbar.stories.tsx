@@ -1,6 +1,17 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {
+  Bold,
+  Copy,
+  Italic,
+  Redo2,
+  Scissors,
+  TextAlignCenter,
+  TextAlignEnd,
+  TextAlignStart,
+  Underline,
+  Undo2,
+} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -34,25 +45,25 @@ export const Default: Story = {
     <Toolbar aria-label="Text formatting">
       <ToggleButtonGroup aria-label="Text style" selectionMode="multiple">
         <ToggleButton isIconOnly aria-label="Bold" id="bold">
-          <Icon icon="gravity-ui:bold" />
+          <Bold />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Italic" id="italic">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:italic" />
+          <Italic />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Underline" id="underline">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:underline" />
+          <Underline />
         </ToggleButton>
       </ToggleButtonGroup>
       <Separator />
       <ButtonGroup>
         <Button isIconOnly aria-label="Copy" variant="secondary">
-          <Icon icon="gravity-ui:copy" />
+          <Copy />
         </Button>
         <ButtonGroup.Separator />
         <Button isIconOnly aria-label="Cut" variant="secondary">
-          <Icon icon="gravity-ui:scissors" />
+          <Scissors />
         </Button>
       </ButtonGroup>
     </Toolbar>
@@ -64,25 +75,25 @@ export const Vertical: Story = {
     <Toolbar aria-label="Tools" orientation="vertical">
       <ToggleButtonGroup aria-label="Text style" selectionMode="multiple">
         <ToggleButton isIconOnly aria-label="Bold" id="bold">
-          <Icon icon="gravity-ui:bold" />
+          <Bold />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Italic" id="italic">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:italic" />
+          <Italic />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Underline" id="underline">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:underline" />
+          <Underline />
         </ToggleButton>
       </ToggleButtonGroup>
       <Separator />
       <ButtonGroup>
         <Button isIconOnly aria-label="Undo" variant="secondary">
-          <Icon icon="gravity-ui:arrow-uturn-ccw-left" />
+          <Undo2 />
         </Button>
         <ButtonGroup.Separator />
         <Button isIconOnly aria-label="Redo" variant="secondary">
-          <Icon icon="gravity-ui:arrow-uturn-cw-right" />
+          <Redo2 />
         </Button>
       </ButtonGroup>
     </Toolbar>
@@ -94,41 +105,41 @@ export const WithButtonGroup: Story = {
     <Toolbar aria-label="Editor toolbar">
       <ButtonGroup>
         <Button variant="secondary">
-          <Icon icon="gravity-ui:arrow-uturn-ccw-left" />
+          <Undo2 />
           Undo
         </Button>
         <ButtonGroup.Separator />
         <Button variant="secondary">
-          <Icon icon="gravity-ui:arrow-uturn-cw-right" />
+          <Redo2 />
           Redo
         </Button>
       </ButtonGroup>
       <Separator />
       <ToggleButtonGroup aria-label="Text style" selectionMode="multiple">
         <ToggleButton isIconOnly aria-label="Bold" id="bold">
-          <Icon icon="gravity-ui:bold" />
+          <Bold />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Italic" id="italic">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:italic" />
+          <Italic />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Underline" id="underline">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:underline" />
+          <Underline />
         </ToggleButton>
       </ToggleButtonGroup>
       <Separator />
       <ButtonGroup>
         <Button isIconOnly aria-label="Align left" variant="secondary">
-          <Icon icon="gravity-ui:text-align-left" />
+          <TextAlignStart />
         </Button>
         <ButtonGroup.Separator />
         <Button isIconOnly aria-label="Align center" variant="secondary">
-          <Icon icon="gravity-ui:text-align-center" />
+          <TextAlignCenter />
         </Button>
         <ButtonGroup.Separator />
         <Button isIconOnly aria-label="Align right" variant="secondary">
-          <Icon icon="gravity-ui:text-align-right" />
+          <TextAlignEnd />
         </Button>
       </ButtonGroup>
     </Toolbar>
@@ -140,25 +151,25 @@ export const Attached: Story = {
     <Toolbar isAttached aria-label="Attached toolbar">
       <ToggleButtonGroup aria-label="Text style" selectionMode="multiple">
         <ToggleButton isIconOnly aria-label="Bold" id="bold">
-          <Icon icon="gravity-ui:bold" />
+          <Bold />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Italic" id="italic">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:italic" />
+          <Italic />
         </ToggleButton>
         <ToggleButton isIconOnly aria-label="Underline" id="underline">
           <ToggleButtonGroup.Separator />
-          <Icon icon="gravity-ui:underline" />
+          <Underline />
         </ToggleButton>
       </ToggleButtonGroup>
       <Separator />
       <ButtonGroup>
         <Button isIconOnly aria-label="Copy" variant="secondary">
-          <Icon icon="gravity-ui:copy" />
+          <Copy />
         </Button>
         <ButtonGroup.Separator />
         <Button isIconOnly aria-label="Cut" variant="secondary">
-          <Icon icon="gravity-ui:scissors" />
+          <Scissors />
         </Button>
       </ButtonGroup>
     </Toolbar>

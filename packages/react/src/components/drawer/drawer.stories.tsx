@@ -1,6 +1,6 @@
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Bell, House, Mail, Menu, Search, Settings, User} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -199,18 +199,18 @@ export const WithScrollableContent = () => (
 
 export const NavigationDrawer = () => {
   const navItems = [
-    {icon: "gravity-ui:house", label: "Home"},
-    {icon: "gravity-ui:magnifier", label: "Search"},
-    {icon: "gravity-ui:bell", label: "Notifications"},
-    {icon: "gravity-ui:envelope", label: "Messages"},
-    {icon: "gravity-ui:person", label: "Profile"},
-    {icon: "gravity-ui:gear", label: "Settings"},
+    {icon: House, label: "Home"},
+    {icon: Search, label: "Search"},
+    {icon: Bell, label: "Notifications"},
+    {icon: Mail, label: "Messages"},
+    {icon: User, label: "Profile"},
+    {icon: Settings, label: "Settings"},
   ];
 
   return (
     <Drawer>
       <Button variant="secondary">
-        <Icon icon="gravity-ui:bars" />
+        <Menu />
         Menu
       </Button>
       <Drawer.Backdrop>
@@ -228,7 +228,7 @@ export const NavigationDrawer = () => {
                     className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-default"
                     type="button"
                   >
-                    <Icon className="size-5 text-muted" icon={item.icon} />
+                    <item.icon className="size-5 text-muted" />
                     {item.label}
                   </button>
                 ))}

@@ -1,7 +1,7 @@
 import type {BadgeProps} from "./index";
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Bell} from "lucide-react";
 import React from "react";
 
 import {Avatar} from "../avatar";
@@ -152,7 +152,7 @@ const WithContentTemplate = (props: BadgeProps) => (
           <Avatar.Image src={AVATAR_URL} />
         </Avatar>
         <Badge {...props} color="accent">
-          <Icon icon="gravity-ui:bell" />
+          <Bell />
         </Badge>
       </Badge.Anchor>
       <span className="text-xs text-muted">Icon</span>

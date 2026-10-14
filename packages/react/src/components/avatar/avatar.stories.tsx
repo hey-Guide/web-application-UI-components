@@ -1,7 +1,7 @@
 import type {AvatarRootProps, AvatarVariants} from "./index";
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {User, UserCog} from "lucide-react";
 import React from "react";
 
 import {Separator} from "../separator";
@@ -39,12 +39,12 @@ const Template = ({color, size}: Avatar["RootProps"]) => (
       </Avatar>
       <Avatar color={color} size={size}>
         <Avatar.Fallback>
-          <Icon icon="gravity-ui:person" />
+          <User />
         </Avatar.Fallback>
       </Avatar>
       <Avatar color={color} size={size}>
         <Avatar.Fallback>
-          <Icon icon="gravity-ui:person-gear" />
+          <UserCog />
         </Avatar.Fallback>
       </Avatar>
     </div>
@@ -166,7 +166,7 @@ const FallbackTemplate = () => {
       {/* Icon fallback */}
       <Avatar>
         <Avatar.Fallback>
-          <Icon icon="gravity-ui:person" />
+          <User />
         </Avatar.Fallback>
       </Avatar>
       {/* Fallback with delay */}
@@ -227,13 +227,11 @@ export const Sizes = {
 const VariantsTemplate = (props: AvatarRootProps) => {
   const colors = ["accent", "default", "success", "warning", "danger"] as const;
   const variants = [
-    {label: "letter", type: "letter", content: "AG"},
-    {label: "letter soft", type: "letter-soft", content: "AG"},
-    {label: "icon", type: "icon", content: <Icon icon="gravity-ui:person" />},
-    {label: "icon soft", type: "icon-soft", content: <Icon icon="gravity-ui:person" />},
+    {content: "AG", label: "letter", type: "letter"},
+    {content: "AG", label: "letter soft", type: "letter-soft"},
+    {content: <User />, label: "icon", type: "icon"},
+    {content: <User />, label: "icon soft", type: "icon-soft"},
     {
-      label: "img",
-      type: "img",
       content: [
         "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
         "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/black.jpg",
@@ -241,6 +239,8 @@ const VariantsTemplate = (props: AvatarRootProps) => {
         "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
         "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
       ],
+      label: "img",
+      type: "img",
     },
   ] as const;
 

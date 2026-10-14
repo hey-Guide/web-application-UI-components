@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from "@storybook/react";
 import type {Selection, SortDescriptor} from "react-aria-components/Table";
 
 import {cn} from "@heroui/styles";
-import {Icon} from "@iconify/react";
+import {ChevronRight, Copy, Eye, Inbox, Pencil, Trash} from "lucide-react";
 import React from "react";
 import {TableLayout, Virtualizer} from "react-aria-components/Virtualizer";
 
@@ -17,17 +17,17 @@ import {Spinner} from "../spinner";
 import {Table} from "./index";
 
 export default {
-  component: Table,
-  parameters: {
-    layout: "centered",
-  },
-  title: "Components/Data Display/Table",
   argTypes: {
     variant: {
       control: "select",
       options: ["primary", "secondary"],
     },
   },
+  component: Table,
+  parameters: {
+    layout: "centered",
+  },
+  title: "Components/Data Display/Table",
 } as Meta<typeof Table>;
 
 type Story = StoryObj<typeof Table>;
@@ -47,96 +47,96 @@ interface User {
 const users: User[] = [
   {
     email: "kate@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
     id: 4586932,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
     name: "Kate Moore",
     role: "Chief Executive Officer",
     status: "Active",
   },
   {
     email: "john@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
     id: 5273849,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
     name: "John Smith",
     role: "Chief Technology Officer",
     status: "Active",
   },
   {
     email: "sara@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
     id: 7492836,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
     name: "Sara Johnson",
     role: "Chief Marketing Officer",
     status: "On Leave",
   },
   {
     email: "michael@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
     id: 8293746,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
     name: "Michael Brown",
     role: "Chief Financial Officer",
     status: "Active",
   },
   {
     email: "emily@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
     id: 1234567,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
     name: "Emily Davis",
     role: "Product Manager",
     status: "Inactive",
   },
   {
     email: "davis@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/black.jpg",
     id: 9876543,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/black.jpg",
     name: "Davis Wilson",
     role: "Lead Designer",
     status: "Active",
   },
   {
     email: "olivia@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
     id: 3456789,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg",
     name: "Olivia Martinez",
     role: "Frontend Engineer",
     status: "Active",
   },
   {
     email: "james@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
     id: 4567890,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/green.jpg",
     name: "James Taylor",
     role: "Backend Engineer",
     status: "Active",
   },
   {
     email: "sophia@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
     id: 5678901,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg",
     name: "Sophia Anderson",
     role: "QA Engineer",
     status: "On Leave",
   },
   {
     email: "liam@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
     id: 6789012,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/purple.jpg",
     name: "Liam Thomas",
     role: "DevOps Engineer",
     status: "Active",
   },
   {
     email: "ava@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
     id: 7890123,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg",
     name: "Ava Jackson",
     role: "Data Analyst",
     status: "Inactive",
   },
   {
     email: "noah@acme.com",
-    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/black.jpg",
     id: 8901234,
+    image_url: "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/black.jpg",
     name: "Noah White",
     role: "Security Engineer",
     status: "Active",
@@ -328,7 +328,7 @@ function DefaultTableTemplate({variant = "primary"}: {variant?: "primary" | "sec
                     <div className="flex items-center gap-2">
                       #{user.id.toString()}{" "}
                       <Button isIconOnly size="sm" variant="ghost">
-                        <Icon className="size-4 text-muted" icon="gravity-ui:copy" />
+                        <Copy className="size-4 text-muted" />
                       </Button>
                     </div>
                   </Table.Cell>
@@ -358,13 +358,13 @@ function DefaultTableTemplate({variant = "primary"}: {variant?: "primary" | "sec
                   <Table.Cell>
                     <div className="flex items-center gap-1">
                       <Button isIconOnly size="sm" variant="tertiary">
-                        <Icon className="size-4" icon="gravity-ui:eye" />
+                        <Eye className="size-4" />
                       </Button>
                       <Button isIconOnly size="sm" variant="tertiary">
-                        <Icon className="size-4" icon="gravity-ui:pencil" />
+                        <Pencil className="size-4" />
                       </Button>
                       <Button isIconOnly size="sm" variant="danger-soft">
-                        <Icon className="size-4" icon="gravity-ui:trash-bin" />
+                        <Trash className="size-4" />
                       </Button>
                     </div>
                   </Table.Cell>
@@ -420,7 +420,7 @@ export const EmptyStateDemo: Story = {
             <Table.Body
               renderEmptyState={() => (
                 <EmptyState className="flex h-full w-full flex-col items-center justify-center gap-4 text-center">
-                  <Icon className="size-6 text-muted" icon="gravity-ui:tray" />
+                  <Inbox className="size-6 text-muted" />
                   <span className="text-sm text-muted">No results found</span>
                 </EmptyState>
               )}
@@ -742,12 +742,12 @@ export const Virtualization: Story = {
         const name = `${firstName} ${lastName}`;
 
         users.push({
+          email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@acme.com`,
           id: i + 1,
-          name,
           image_url: `https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/red.jpg`,
+          name,
           role: roles[i % roles.length],
           status: statuses[i % statuses.length],
-          email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@acme.com`,
         });
       }
 
@@ -760,8 +760,8 @@ export const Virtualization: Story = {
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
-          rowHeight: 42,
           headingHeight: 42,
+          rowHeight: 42,
         }}
       >
         <Table>
@@ -856,9 +856,9 @@ export const ExpandableRows: Story = {
                     slot="chevron"
                     variant="ghost"
                   >
-                    <Icon
+                    <ChevronRight
                       aria-hidden
-                      icon="gravity-ui:chevron-right"
+
                       className={cn(
                         "size-4 text-muted transition-transform duration-150",
                         isExpanded ? "rotate-90" : "rtl:rotate-180",

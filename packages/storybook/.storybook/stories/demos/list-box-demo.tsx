@@ -1,5 +1,5 @@
-import {Pencil, SquarePlus, TrashBin} from "@gravity-ui/icons";
 import {Description, Header, Kbd, Label, ListBox, Separator, Surface} from "@heroui/react";
+import {Pencil, SquarePlus, Trash} from "lucide-react";
 import React from "react";
 
 export function ListBoxDemo() {
@@ -40,7 +40,7 @@ export function ListBoxDemo() {
           <Header>Danger zone</Header>
           <ListBox.Item id="delete-file" textValue="Delete file" variant="danger">
             <div className="flex h-8 items-start justify-center pt-px">
-              <TrashBin className="size-4 shrink-0 text-danger" />
+              <Trash className="size-4 shrink-0 text-danger" />
             </div>
             <div className="flex flex-col">
               <Label>Delete file</Label>

@@ -33,6 +33,12 @@
     --radius: 0.5rem;
     --field-radius: calc(var(--radius) * 1.5);
 
+    /* heyGuide brand colours (shared with the dark theme); the logos use brand-blue and brand-pink */
+    --brand-blue: #1c496d;
+    --brand-blue-light: #c7d4ef;
+    --brand-pink: #e6146d;
+    --brand-pink-light: #fdebf1;
+
     /* Accent and status hues (shared with the dark theme) */
     --accent: oklch(0.6204 0.195 253.83);
     --accent-foreground: var(--snow);

@@ -1,6 +1,6 @@
 import type {Meta} from "@storybook/react";
 
-import {Icon} from "@iconify/react";
+import {Info, Paperclip} from "lucide-react";
 import React from "react";
 
 import {Button} from "../button";
@@ -56,7 +56,7 @@ const Template = (props: Tooltip["ContentProps"]) => (
   <div className="flex items-center justify-center gap-3">
     <Tooltip delay={0}>
       <Button isIconOnly variant="tertiary">
-        <Icon icon="gravity-ui:circle-info" />
+        <Info />
       </Button>
       <Tooltip.Content {...props}>
         <Tooltip.Arrow />
@@ -71,7 +71,7 @@ const TemplateWithTrigger = (props: Tooltip["ContentProps"]) => (
     <Tooltip delay={0}>
       <Tooltip.Trigger aria-label="Tooltip trigger">
         <div className="rounded-full bg-accent-soft p-2">
-          <Icon icon="gravity-ui:circle-info" />
+          <Info />
         </div>
       </Tooltip.Trigger>
       <Tooltip.Content {...props}>
@@ -104,7 +104,7 @@ const CardWithTooltipTemplate = (props: Tooltip["ContentProps"]) => (
             size="lg"
             variant="secondary"
           >
-            <Icon icon="gravity-ui:paperclip" />
+            <Paperclip />
           </Button>
         </Tooltip.Trigger>
         <Tooltip.Content {...props}>
